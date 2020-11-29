@@ -12,6 +12,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import menu.*;
@@ -144,8 +149,8 @@ public class Main extends Application {
 					})
 			);
 
-			vbox.setTranslateX(198);
-			vbox.setTranslateY(360);
+			vbox.setTranslateX(200);
+			vbox.setTranslateY(350);
 			getChildren().addAll(mainMenubg,title,vbox);
 
 		}
@@ -156,6 +161,13 @@ public class Main extends Application {
 			//BackgroundImage mainMenubg = new BackgroundImage("file:src/images/arcade_bg.jpg");
 			//getChildren().add(mainMenubg);
 			ImageView image = new ImageView("file:src/main/java/images/bg.jpg");
+
+			Text text = new Text("GAME PAUSED");
+			text.setTranslateY(65);
+			text.setTranslateX(68);
+			text.setTextAlignment(TextAlignment.CENTER);
+			text.setFill(Color.WHITE);
+			text.setFont(Font.font("Times New Roman", FontWeight.SEMI_BOLD, 28));
 
 
 			MenuBox vbox = new MenuBox(
@@ -172,7 +184,7 @@ public class Main extends Application {
 						@Override
 						public void act() throws IOException {
 							animal.reset();
-							animal.blockInputControls = false;
+							animal.respawn(false);
 							changeLevel(new LevelType1(), currentStage, animal);
 							stage2.close();
 
@@ -199,9 +211,9 @@ public class Main extends Application {
 					})
 			);
 
-			vbox.setTranslateX(65);
-			vbox.setTranslateY(80);
-			getChildren().addAll(image,vbox);
+			vbox.setTranslateX(63);
+			vbox.setTranslateY(100);
+			getChildren().addAll(image,text,vbox);
 
 		}
 	}
