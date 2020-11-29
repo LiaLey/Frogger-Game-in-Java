@@ -224,8 +224,9 @@ public class Animal extends Actor {
 		Media sound = new Media(new File(musicFile).toURI().toString());
 		mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.setCycleCount(1);
-		mediaPlayer.play();
+		if (!hasWon()){
+			mediaPlayer.play();
+		}
+
 	}
-
-
 }

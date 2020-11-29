@@ -13,6 +13,6 @@
             <Image url="@images/Information.png" />
          </image>
       </ImageView>
-      <Button layoutX="139.0" layoutY="407.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="120.0" text="Back to Main Menu" />
+      <Button layoutX="146.0" layoutY="431.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="120.0" text="Back to Main Menu" />
    </children>
 </AnchorPane>

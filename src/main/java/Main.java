@@ -128,15 +128,14 @@ public class Main extends Application {
 							currentStage.show();
 						}
 					}),
-
 					new MenuItem("Info", new ButtonAction() {
 						@Override
 						public void act() throws IOException {
 
-							Stage stage3 = new Stage();
-							stage3.setScene(new Scene(root));
-							stage3.setTitle("Information");
-							stage3.showAndWait();
+							Stage infoStage = new Stage();
+							infoStage.setScene(new Scene(root));
+							infoStage.setTitle("Information");
+							infoStage.showAndWait();
 							currentStage.setScene(new Scene(new MainMenu()));
 						}
 					}),
@@ -157,7 +156,7 @@ public class Main extends Application {
 	}
 
 	private class Menu extends Pane{
-		public Menu(Stage stage2){
+		public Menu(Stage pauseStage){
 			//BackgroundImage mainMenubg = new BackgroundImage("file:src/images/arcade_bg.jpg");
 			//getChildren().add(mainMenubg);
 			ImageView image = new ImageView("file:src/main/java/images/bg.jpg");
@@ -174,7 +173,8 @@ public class Main extends Application {
 					new MenuItem("Resume Game", new ButtonAction() {
 						@Override
 						public void act() throws IOException {
-							stage2.close();
+							pauseStage.close();
+							level.start();
 							animal.blockInputControls = false;
 							mediaPlayer.playMusic();
 
@@ -186,7 +186,7 @@ public class Main extends Application {
 							animal.reset();
 							animal.respawn(false);
 							changeLevel(new LevelType1(), currentStage, animal);
-							stage2.close();
+							pauseStage.close();
 
 						}
 					}),
@@ -194,17 +194,17 @@ public class Main extends Application {
 						@Override
 						public void act() throws IOException {
 							animal.reset();
-							animal.blockInputControls = false;
+							animal.respawn(false);
 							currentStage.setScene(new Scene(new MainMenu()));
 							currentStage.show();
-							stage2.close();
+							pauseStage.close();
 							mediaPlayer.stopMusic();
 						}
 					}),
 					new MenuItem("Exit", new ButtonAction() {
 						@Override
 						public void act() {
-							stage2.close();
+							pauseStage.close();
 							mediaPlayer.stopMusic();
 							Platform.exit();
 						}
@@ -243,16 +243,17 @@ public class Main extends Application {
 					@Override
 					public void act() throws IOException {
 						mediaPlayer.stopMusic();
+						level.stop();
 						animal.blockInputControls = true;
-						Stage stage2 = new Stage();
-						stage2.setScene(new Scene(new Menu(stage2)));
-						stage2.setHeight(350);
-						stage2.setWidth(350);
-						stage2.show();
+						Stage pauseStage = new Stage();
+						pauseStage.setScene(new Scene(new Menu(pauseStage)));
+						pauseStage.setHeight(350);
+						pauseStage.setWidth(350);
+						pauseStage.show();
 					}
 				}), false
 		);
-		menu.setTranslateX(450);
+		menu.setTranslateX(430);
 		menu.setTranslateY(755);
 		level.getChildren().add(menu);
 		level.add(animal);

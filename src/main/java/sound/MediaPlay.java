@@ -37,10 +37,6 @@ public class MediaPlay {
         mediaPlayer.play();
     }
 
-    public void pauseMusic(){
-        mediaPlayer.pause();
-    }
-
     public void stopMusic() {
         mediaPlayer.stop();
     }
