@@ -342,7 +342,7 @@ public class Main extends Application {
 	 * @see ScorePair
 	 * The score will be stored in a ScorePair array list.
 	 * The array of scores will be written into the 'LeaderBoard' file each time.
-	 * @throws IOException
+	 * @throws IOException upon error in reading/loading files
 	 */
 	public void saveScore() throws IOException{
 
@@ -359,7 +359,7 @@ public class Main extends Application {
 	/**
 	 * Resets the animal to its original state, restores health and scores.
 	 * Returns the scene of the game back to the Main Menu.
-	 * @throws IOException
+	 * @throws IOException upon error in resetting game
 	 */
 	public void resetGame() throws IOException {
 		frog.reset();

@@ -3,7 +3,7 @@ package menu;
 import java.io.IOException;
 
 /**
- * Buttion Action is an abstract class that defines the action that will be taken when the button is clicked by the inherited classes.
+ * Button Action is an abstract class that defines the action that will be taken when the button is clicked by the inherited classes.
  *
  */
 public abstract class ButtonAction {
