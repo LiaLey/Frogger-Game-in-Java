@@ -7,9 +7,18 @@ import actors.active.Turtle;
 import actors.passive.Digit;
 import actors.passive.End;
 
+/**
+ * This Class defines the settings and obstacles for the second level type in the game.
+ * The class will also pass the next level type class to the parent class so that it can be called during the change of levels
+ */
 public class LevelType2 extends MyLevel {
 
     public static Class myNextLevel = LevelType3.class;
+
+    /**
+     * Class constructor.
+     * Creates an instance of LevelType2
+     */
     public LevelType2(){
         super(myNextLevel);
 

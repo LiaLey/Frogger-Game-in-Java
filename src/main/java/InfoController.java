@@ -8,11 +8,18 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+/**
+ * This is the controller class for the info.fxml
+ */
 public class InfoController {
 
     @FXML
     private Label label;
 
+    /**
+     * This method will close the window (Stage) once the button is clicked
+     * @param event the event that occurs
+     */
     @FXML
     private void handleButtonAction(ActionEvent event) {
 

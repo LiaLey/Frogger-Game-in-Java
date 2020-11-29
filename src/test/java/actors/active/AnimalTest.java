@@ -1,9 +1,6 @@
 package actors.active;
 
-import actors.Actor;
 import javafx.embed.swing.JFXPanel;
-import javafx.scene.image.Image;
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,22 +13,22 @@ public class AnimalTest {
     @Test
     public void testgetHealthReset() {
 
-        animal = new Animal("file:src/main/java/images/froggerUp.png");
-        int health = animal.getHealth();
+        animal = new Animal();
+        int health = animal.getLives();
         Assert.assertEquals(8, health);   ///changed to 8
 
-        animal.health = 2;
-        Assert.assertEquals(2, animal.getHealth());
+        animal.lives = 2;
+        Assert.assertEquals(2, animal.getLives());
 
         animal.reset();
-        Assert.assertEquals(8, animal.getHealth());
+        Assert.assertEquals(8, animal.getLives());
 
     }
 
     @Test
     public void testgetTotalPointsReset() {
 
-        animal = new Animal("file:src/main/java/images/froggerUp.png");
+        animal = new Animal();
         int points = animal.getTotalPoints();
         Assert.assertEquals(-93, points);
 
@@ -47,7 +44,7 @@ public class AnimalTest {
     @Test
     public void testHasWon() {
 
-        animal = new Animal("file:src/main/java/images/froggerUp.png");
+        animal = new Animal();
         int endsActivated = animal.numberOfEndsActivated;
         Assert.assertEquals(0, endsActivated);
 
@@ -61,7 +58,7 @@ public class AnimalTest {
     @Test
     public void testMaxRangeReset() {
 
-        animal = new Animal("file:src/main/java/images/froggerUp.png");
+        animal = new Animal();
         int maxRange = animal.maxRangeAchieved;
         Assert.assertEquals(800, maxRange);
 

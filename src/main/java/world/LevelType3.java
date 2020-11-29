@@ -4,9 +4,18 @@ import actors.active.*;
 import actors.passive.Digit;
 import actors.passive.End;
 
+/**
+ * This Class defines the settings and obstacles for the third level type in the game
+ * The class will also pass the next level class to the parent class so that it can be called during the change of levels
+ */
 public class LevelType3 extends MyLevel{
 
     public static Class myNextLevel = LevelType4.class;
+
+    /**
+     * Class constructor.
+     * Creates an instance of LevelType3
+     */
     public LevelType3() {
         super(myNextLevel);
 

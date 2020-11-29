@@ -8,8 +8,17 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
+/**
+ * This class defines the display of the Titles used in some scene in the game.
+ * Defines the specific font, style and alignment used for titles in the game
+ */
 public class Title extends StackPane {
 
+    /**
+     * Class constuctor.
+     * Creates an instance of Title with given string
+     * @param name
+     */
     public Title(String name){
         Rectangle bg = new Rectangle(375,60);
         bg.setStroke(Color.WHITE);

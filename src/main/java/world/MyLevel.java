@@ -9,15 +9,31 @@ import actors.passive.Lives;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+/**
+ * This class defines the standard properties of each level in the game.
+ * This includes setting the lives, scores and passing levels along each class
+ */
 public class MyLevel extends World{
 	MediaPlayer mediaPlayer;
 	Class<MyLevel> nextLevel;
 	ArrayList<Lives> lives = new ArrayList<>();
+
+	/**
+	 * This method defines how the levels should act.
+	 * The method is inherited from the parent class World
+	 * In this game, the level classes does nothing so the method is empty
+	 * @param now the timestamp of the current frame in nanoseconds
+	 */
 	@Override
 	public void act(long now) {
 		
 	}
-	
+
+	/**
+	 * Class constuctor.
+	 * Creates an instance of MyLevel
+	 * @param nextLevel the class that the game change to in the next round
+	 */
 	public MyLevel(Class<MyLevel> nextLevel) {
 		
 
@@ -26,23 +42,34 @@ public class MyLevel extends World{
 		this.nextLevel = nextLevel;
 	}
 
-	public void setNumberOfHearts(int numberOfHearts){
+	/**
+	 * This method sets the number of lives to be visible in the scene
+	 * @param numberOfLives the number of lives the frog has left
+	 */
+	public void setNumberOfLives(int numberOfLives){
 		getChildren().removeIf(x -> x instanceof Lives);
 		lives.clear();
 		int x = 10;
-		for (int i = 0; i < numberOfHearts; i++) {
+		for (int i = 0; i < numberOfLives; i++) {
 			Lives temp = new Lives(35, x, 755);
 			x += 40;
 			lives.add(temp);
 		}
 		this.addHealth(lives);
-	}
+	};
 
-	public void removeHearts(){
+	/**
+	 * This method visibly removes lives from the level scene when called
+	 */
+	public void removeLives(){
 		this.removeHealth(lives);
 	}
 
 
+	/**
+	 * This method sets the number(scores) visible in the level scene
+	 * @param points the current points of the player to be displayed
+	 */
 	public void setNumber(int points) {
 		getChildren().removeIf(x -> x instanceof Digit);
 		int shift = 0;
@@ -54,6 +81,14 @@ public class MyLevel extends World{
 		}
 	}
 
+	/**
+	 * This method gets the class of the next level to be instantiated when called
+	 * @return The next level to be displayed
+	 * @throws NoSuchMethodException
+	 * @throws IllegalAccessException
+	 * @throws InvocationTargetException
+	 * @throws InstantiationException
+	 */
 	public MyLevel getNextLevel() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 		return nextLevel.getConstructor().newInstance();
 	}

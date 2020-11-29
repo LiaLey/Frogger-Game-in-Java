@@ -4,24 +4,60 @@ import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 
+/**
+ * Animation types that can be used
+ * {@link #UP}
+ * {@link #DOWN}
+ * {@link #LEFT}
+ * {@link #RIGHT}
+ * {@link #WATER_DEATH}
+ * {@link #CAR_DEATH}
+ */
 enum AnimationType {
+    /**
+     * Up movement animation
+     */
     UP,
+    /**
+     * Down movement animation
+     */
     DOWN,
+    /**
+     * Left movement animation
+     */
     LEFT,
+    /**
+     * Right movement animation
+     */
     RIGHT,
+    /** Water Death animation
+     *
+     */
     WATER_DEATH,
+    /**
+     * Car Death animation
+     */
     CAR_DEATH
 }
 
 
 /**
- * Assumes that the first index in animations list is the resting position
+ * Iterates an arrayList of different images to form a complete animation for movements
+ * Assumes that the first index in animations list is the resting position.
+ * Therefore the resting postion image will be at index 0 of the arrayList.
  */
 class AnimationIterator {
     public final ArrayList<Image> animations = new ArrayList<>();
     protected int index = 0;
     protected AnimationType type;
 
+    /**
+     * Class Constuctor.
+     * Creates an instance of AnimationInterator with given animation type
+     * Stores the images into an arrayList to interate.
+     * @param animation The types of animations that can be used to constuct the animation iterator
+     * @see AnimationType
+     */
     protected AnimationIterator(AnimationType animation) {
         type = animation;
         if (animation == AnimationType.UP) {
@@ -48,12 +84,19 @@ class AnimationIterator {
         }
     }
 
+    /**
+     * This method loops the index of the arrayList of images
+     */
     protected void cycleIndex() {
         if (index == animations.size() - 1)
             index = 0;
         else index++;
     }
 
+    /**
+     * This method returns the next index in the arrayList of images when called
+     * @return int - the index of the next image in the arrayList
+     */
     protected int nextIndex() {
         int tempIndex = index;
         if (tempIndex == animations.size() - 1)
@@ -62,17 +105,29 @@ class AnimationIterator {
         return tempIndex;
     }
 
+    /**
+     * This method will return the next required image in the arrayList
+     * @return Image - the next image in the array
+     */
     protected Image next() {
         Image res = animations.get(index);
         cycleIndex();
         return res;
     }
 
+    /**
+     * This method will return the image of the frog in resting position
+     * The resting postion image will be at index 0 of the arrayList
+     * @return Image - the resting position image of the frog
+     */
     protected Image restingPosition() {
         index = 1;      // allows for non-resting animation immediately after resuming from rest
         return animations.get(0);
     }
 
+    /**
+     * This method resets the cycle of images in the arrayList and sets the index back to 0
+     */
     protected void resetCycle() {
         index = 0;
     }

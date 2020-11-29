@@ -13,7 +13,17 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 
+/**
+ * This Class sets the display for the items of the menu
+ */
 public class MenuItem extends StackPane {
+
+    /**
+     * Class constructor.
+     * Creates new instance of Menu item with given name and button action
+     * @param name name of the menu item to be displayed
+     * @param myButtonAction button action that will be called on the menu item is clicked
+     */
     public MenuItem(String name, ButtonAction myButtonAction) {
 
 
@@ -61,6 +71,15 @@ public class MenuItem extends StackPane {
 
     }
 
+    /**
+     *
+     * Class constructor.
+     * Creates new instance of Menu item with given name and button action
+     * @param name name of the menu item to be displayed
+     * @param myButtonAction button action that will be called on the menu item is clicked
+     * @param v the width of the menu item
+     * @param v1 the height of the menu item
+     */
 
     public MenuItem(String name, ButtonAction myButtonAction, int v, int v1) {
         LinearGradient gradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, new Stop(0, Color.DARKBLUE),

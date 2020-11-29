@@ -14,7 +14,11 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
-
+/**
+ * Class for the player which is the Frog.
+ * Displays the movement and the animation of the Frog
+ * Displays and controls interaction of the frog with the obstacles in the game
+ */
 public class Animal extends Actor {
 
 	MediaPlayer mediaPlayer;
@@ -32,14 +36,20 @@ public class Animal extends Actor {
 	private boolean carDeath = false;
 	private boolean waterDeath = false;
 
-	protected int health = 8;
+	protected int lives = 8;
 	protected int auxPoints = 0;
 	protected int heightPoints = -93;
 	int numberOfEndsActivated = 0;
 	int maxRangeAchieved = 800;
 
-	public Animal(String imageLink) {
-		setImage(new Image(imageLink, IMAGE_SIZE, IMAGE_SIZE, true, true));
+	/**
+	 * Class constructor for animal
+	 * Creates an instance of the animal player (frog)
+	 * Sets the position of the frog and controls the movement and animation displays of the frog during each movement
+	 * Controls of the frog are the WASD keys
+	 */
+	public Animal() {
+		setImage(new Image("file:src/main/java/images/froggerUp.png", IMAGE_SIZE, IMAGE_SIZE, true, true));
 		setX(300);
 		setY(679.8+MOVEMENT);
 
@@ -81,7 +91,15 @@ public class Animal extends Actor {
 			}
 		});
 	}
-	
+
+	/**
+	 * This method tells the frog how to act when called. The method is called every frame by the animation timer.
+	 * This method keeps track of the maximum range the frog has travelled as well as the position of the frog in each frame
+	 * In each frame, by keeping track of the position of the frog, the game will know if the frog has hit an obstacle or drowned in the river.
+	 * The method checks for intersections with other objects and adds points or calls for death accordingly
+	 * The method also checks if the frog has entered the frog hole and awards points
+	 * @param now
+	 */
 	@Override
 	public void act(long now) {
 
@@ -157,6 +175,12 @@ public class Animal extends Actor {
 		}
 	}
 
+	/**
+	 * The death animation of the frog will start to display once the method is called.
+	 * The method will show the death images in sequence and forms an animation loop
+	 * @param animation the arrayList of images that will loop to form an animation
+	 * @param now the timestamp of each frame in the game in nanoseconds
+	 */
 	public void initiateDeathAnimation(AnimationIterator animation, long now){
 		blockInputControls = true;
 		if((now) % 11 == 0){
@@ -171,19 +195,34 @@ public class Animal extends Actor {
 			}
 			animation.resetCycle();
 			respawn(true);
-			health--;
+			lives--;
 		}
 
 	}
 
+	/**
+	 * This method returns a true/false value each time it is called.
+	 * The value will be true if the frog has managed to enter all 5 frog holes in the level
+	 * @return (boolean) true/ false depending on whether the frog has filled up all 5 frog holes
+	 */
 	public boolean hasWon() {
 		return numberOfEndsActivated == 2;
 	}
-	
+
+	/**
+	 * This method will return the total points of the frog at present when called
+	 * @return (int)totalPoints - total points scored by the player
+	 */
 	public int getTotalPoints() {
 		return auxPoints+heightPoints;
 	}
 
+	/**
+	 * This method will respawn the frog to its starting position when called
+	 * It will also check if the respawn is triggered by the death of the frog or not
+	 * If so, scores will be deducted
+	 * @param died boolean value of whether of not the frog has died when triggering the respawn
+	 */
 	public void respawn(boolean died) {
 		setX(300);
 		setY(679.8 + MOVEMENT);
@@ -194,18 +233,30 @@ public class Animal extends Actor {
 		}
 	}
 
+	/**
+	 * This method will reset the number of frog holes filled back to 0
+	 */
 	public void resetEnds() {
 		numberOfEndsActivated = 0;
 	}
 
+	/**
+	 * This method will reset the health and points of the game
+	 * it will also call for the reset of the number of frog holes entered back to 0
+	 */
 	public void reset(){
 		resetEnds();
-		health = 8;
+		lives = 8;
 		auxPoints = 0;
 		maxRangeAchieved = 800;
 		heightPoints = -93;
 	}
 
+	/**
+	 * This method wil add the points scored by the player
+	 * @param heightScore the vertical distance travelled by the frog
+	 * @param auxScore the scores earned when winning the level or entering a frog hole
+	 */
 	public void addPoints(int heightScore, int auxScore) {
 		this.heightPoints += heightScore;
 		if (auxPoints + auxScore < 0)
@@ -214,11 +265,19 @@ public class Animal extends Actor {
 			this.auxPoints += auxScore;
 	}
 
-	public int getHealth(){
-		return health;
+	/**
+	 * This method returns the current health of the frog when called
+	 * @return (int) the health (number of lives) left
+	 */
+	public int getLives(){
+		return lives;
 	}
 
 
+	/**
+	 * This method will play the winning music when called.
+	 * This method is called when the frog manages to enter the frog hole
+	 */
 	public void playWinMusic() {
 		String musicFile = "src/main/java/sound/win.mp3";
 		Media sound = new Media(new File(musicFile).toURI().toString());

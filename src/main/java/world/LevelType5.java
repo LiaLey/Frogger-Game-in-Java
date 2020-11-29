@@ -4,19 +4,21 @@ import actors.active.*;
 import actors.passive.Digit;
 import actors.passive.End;
 
+/**
+ * This Class defines the settings and obstacles for the fifth level type in the game
+ * The class will also pass the next level type class to the parent class so that it can be called during the change of levels
+ */
 public class LevelType5 extends MyLevel{
-    static int turn = 0;
 
-    //public static Class myNextLevel = Level1.class;
     public static Class myNextLevel = LevelType1.class;
 
+    /**
+     * Class constructor.
+     * Creates an instance of LevelType5
+     */
     public LevelType5() {
         super(myNextLevel);
-        //System.out.println(myNextLevel);
-//        turn++;
-//        if (turn == 3) {
-//            myNextLevel = null;
-//        }
+
 
         this.add(new Log("file:src/main/java/images/log3.png", 150, 0, 166, 0.75));
         this.add(new Log("file:src/main/java/images/log3.png", 150, 220, 166, 0.75));

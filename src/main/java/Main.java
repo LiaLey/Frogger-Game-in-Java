@@ -31,22 +31,44 @@ import java.util.Collections;
 import java.util.Map;
 
 
-//Comparable for serialising
+/**
+ * This class makes a Pair of a String and an Integer to keep records of the name and score of the player
+ * This class extends from Pair and implements the public interface Comparable
+ * Comparable imposes total ordering of objects in the class that implements it so it'll sort the scores of the player accordingly
+ * @param <String> (user)  The name of the device/player
+ * @param <Integer> (score) Total score of the player
+ */
 class ScorePair<String,Integer> extends Pair<String, Integer> implements Comparable{
+	/**
+	 * ScorePair class constructor
+	 * @param user  name of device
+	 * @param score -score
+	 */
 	public ScorePair(String user, Integer score){
 		super(user,score);
 	}
 
+	/**
+	 * Method implemented from Comparable for the total ordering of objects
+	 * @see Comparable
+	 * @param o  the ScorePair
+	 * @return score - sort the scores(value) in order
+	 */
 	@Override
 	public int compareTo(Object o) {
-		int compareScore = (int) ((ScorePair) o).getValue();
-		return (int) this.getValue() - compareScore;
+		int compareScore = (int) ((ScorePair) o).getValue(); // get the value(score)
+		return (int) this.getValue() - compareScore; //compare
 	}
 }
 
+/**
+ * Main Class of the Application
+ * @see javafx.application.Application
+ */
+
 public class Main extends Application {
 	AnimationTimer timer;
-	Animal animal = new Animal("file:src/main/java/images/froggerUp.png");
+	Animal frog = new Animal();
 	MyLevel level; //test
 	Stage currentStage;
 	String currentUser;
@@ -54,17 +76,33 @@ public class Main extends Application {
 	ArrayList<Lives> lives = new ArrayList<>(); //test
 	ArrayList<ScorePair> scoreBoard = new ArrayList<>();
 
-	//Parent root ;
-
+	/**
+	 * Leaderboard class to create a Leaderboard to store scores of the players
+	 * Has a Main Menu button to allow players to go back to the Main Menu
+	 */
 	private class LeaderBoard extends Pane {
+
+		/**
+		 * Class for Menu Items that does not do anything on click
+		 */
 		private class PassiveMenuItem extends ButtonAction{
 			@Override
+			/**
+			 * Abstract method inherited from ButtonAction
+			 * @see ButtonAction
+			 * @returns void
+			 * @throws IOException on input error
+			 * Does nothing, the Button will not act in Passive Menu Items
+			 */
 			public void act() throws IOException {}
 		}
 
+		/**
+		 * LeaderBoard Class Contructor
+		 * Constructs a board displaying the scores of each player
+		 */
 		public LeaderBoard(){
 			BackgroundImage mainMenubg = new BackgroundImage("file:src/main/java/images/bg.jpg");
-			//getChildren().add(mainMenubg);
 
 			Title title = new Title("LeaderBoard");
 			title.setTranslateX(120);
@@ -80,13 +118,11 @@ public class Main extends Application {
 						}
 					})
 			);
-
 			mainMenuBox.setTranslateX(200);
 			mainMenuBox.setTranslateY(700);
 
 			Collections.sort(scoreBoard);
 			ArrayList<MenuItem> myList = new ArrayList<>();
-
 			if (scoreBoard.size() > 0) {
 				for (int i = scoreBoard.size() - 1; i >= 0 && i > scoreBoard.size() - 11; i--) {
 					myList.add(new MenuItem(scoreBoard.get(i).getKey() + " - " + scoreBoard.get(i).getValue(), new PassiveMenuItem(), 270, 30));
@@ -100,14 +136,23 @@ public class Main extends Application {
 		}
 	}
 
+	/**
+	 * Main Menu class
+	 * Displays the Main Menu of the game
+	 * Allows users to access the start of the game, the Leadeboard and the information of the game
+	 * as well as exit the game on click
+	 */
 	private class MainMenu extends Pane{
+
+		/**
+		 * Main menu class constructor
+		 * Constructs a menu box with various clickable items
+		 * @throws IOException
+		 */
 		public MainMenu() throws IOException {
 
 			Parent root = FXMLLoader.load(getClass().getResource("info.fxml"));
-
-
 			BackgroundImage mainMenubg = new BackgroundImage("file:src/main/java/images/arcade_bg.jpg");
-			//getChildren().add(mainMenubg);
 
 			Title title = new Title ("F R O G G E R");
 			title.setTranslateX(117);
@@ -118,7 +163,7 @@ public class Main extends Application {
 					new MenuItem("Start Game", new ButtonAction() {
 						@Override
 						public void act() throws IOException {
-							changeLevel(new LevelType1(), currentStage, animal);
+							changeLevel(new LevelType1(), currentStage, frog);
 						}
 					}),
 					new MenuItem("LeaderBoard", new ButtonAction() {
@@ -155,10 +200,22 @@ public class Main extends Application {
 		}
 	}
 
+	/**
+	 * PauseMenu class
+	 * Sets a Pause Menu with items to let players restart the game,
+	 * resume the game, exit the game
+	 * and return to Main Menu upon a click
+	 */
 	private class Menu extends Pane{
+
+		/**
+		 * Class constructor for Menu
+		 * Creates menu boxes to list the menu items that can be accessed by the player
+		 * which includes the Resume, Restart, Exit and Exit to Main Menu buttons
+		 * @param pauseStage  the separate window that displays the pause menu
+		 */
 		public Menu(Stage pauseStage){
-			//BackgroundImage mainMenubg = new BackgroundImage("file:src/images/arcade_bg.jpg");
-			//getChildren().add(mainMenubg);
+
 			ImageView image = new ImageView("file:src/main/java/images/bg.jpg");
 
 			Text text = new Text("GAME PAUSED");
@@ -175,7 +232,7 @@ public class Main extends Application {
 						public void act() throws IOException {
 							pauseStage.close();
 							level.start();
-							animal.blockInputControls = false;
+							frog.blockInputControls = false;
 							mediaPlayer.playMusic();
 
 						}
@@ -183,9 +240,9 @@ public class Main extends Application {
 					new MenuItem("Restart", new ButtonAction() {
 						@Override
 						public void act() throws IOException {
-							animal.reset();
-							animal.respawn(false);
-							changeLevel(new LevelType1(), currentStage, animal);
+							frog.reset();
+							frog.respawn(false);
+							changeLevel(new LevelType1(), currentStage, frog);
 							pauseStage.close();
 
 						}
@@ -193,8 +250,8 @@ public class Main extends Application {
 					new MenuItem("Exit To Main Menu", new ButtonAction() {
 						@Override
 						public void act() throws IOException {
-							animal.reset();
-							animal.respawn(false);
+							frog.reset();
+							frog.respawn(false);
 							currentStage.setScene(new Scene(new MainMenu()));
 							currentStage.show();
 							pauseStage.close();
@@ -218,10 +275,21 @@ public class Main extends Application {
 		}
 	}
 
+	/**
+	 * static method of the Application class
+	 * launches the application
+	 * @param args argument passed to the application
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
 
+	/**
+	 * Method that runs whenever the application launches
+	 * Starts the application and shows the stage/window
+	 * @param primaryStage  stage that shows whenever the program starts
+	 * @throws Exception upon error in starting the application
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
@@ -235,7 +303,16 @@ public class Main extends Application {
 
 	}
 
-	public void changeLevel(MyLevel myLevel, Stage currentStage, Animal animal) throws IOException{
+	/**
+	 * This method starts and displays the levels of the game each time it is called
+	 * The method adds the game menu into the scene so players will only have access to the mid game menu once the level starts
+	 * This method also adds the animal into the scene at the start of each level
+	 * @param myLevel the level that the game is supposed to change to
+	 * @param currentStage the current window running the game
+	 * @param frog the animal in the game
+	 * @throws IOException upon input error
+	 */
+	public void changeLevel(MyLevel myLevel, Stage currentStage, Animal frog) throws IOException{
 
 		level = myLevel;
 		MenuBox menu = new MenuBox(
@@ -244,7 +321,7 @@ public class Main extends Application {
 					public void act() throws IOException {
 						mediaPlayer.stopMusic();
 						level.stop();
-						animal.blockInputControls = true;
+						frog.blockInputControls = true;
 						Stage pauseStage = new Stage();
 						pauseStage.setScene(new Scene(new Menu(pauseStage)));
 						pauseStage.setHeight(350);
@@ -256,16 +333,23 @@ public class Main extends Application {
 		menu.setTranslateX(430);
 		menu.setTranslateY(755);
 		level.getChildren().add(menu);
-		level.add(animal);
+		level.add(frog);
 		currentStage.setScene(new Scene(level, 600, 800));
 		currentStage.show();
 		startGame();
 
 	}
 
+	/**
+	 * This method saves the score of the player in a ScorePair
+	 * @see ScorePair
+	 * The score will be stored in a ScorePair array list
+	 * The array of scores will be written into the 'LeaderBoard' file each time
+	 * @throws IOException
+	 */
 	public void saveScore() throws IOException{
 
-		ScorePair score = new ScorePair(currentUser, animal.getTotalPoints());
+		ScorePair score = new ScorePair(currentUser, frog.getTotalPoints());
 		scoreBoard.add(score);
 		FileOutputStream leaderboard_fos = new FileOutputStream("LeaderBoard");
 		ObjectOutputStream leaderboard_oos = new ObjectOutputStream(leaderboard_fos);
@@ -275,12 +359,21 @@ public class Main extends Application {
 
 	}
 
+	/**
+	 * Resets the animal to its orginal state, restores health and scores
+	 * Returns the scene of the game back to the Main Menu
+	 * @throws IOException
+	 */
 	public void resetGame() throws IOException {
-		animal.reset();
+		frog.reset();
 		currentStage.setScene(new Scene(new MainMenu()));
 		currentStage.show();
 	}
 
+	/**
+	 * This methods loads the score that was stored in the file from the prvious game
+	 * Scores are read from the file and stored into the ScorePair Array list to be displayed in the LeaderBoard
+	 */
 	public void loadsScore() {
 
 		try{
@@ -297,33 +390,41 @@ public class Main extends Application {
 	}
 
 
+	/**
+	 * This method creates the timer for the game and
+	 * will be called in each frame while active
+	 * The handle method inherited from AnimationTimer is overridden to
+	 * check the points of the player and health of the frog
+	 * It also checks if the player has won the round so the game can proceed to the next level
+	 * This is called in each timestamp of the frame(in nanoseconds)
+	 * @see AnimationTimer
+	 */
 	public void createTimer() {
 		timer = new AnimationTimer() {
 			int currentPoints = 0;
-			int currentHealth = 8;
-
+			int currentlives = 8;
 			@Override
 			public void handle(long now) {
 
-				if (currentPoints != animal.getTotalPoints()) {
-					currentPoints = animal.getTotalPoints();
+				if (currentPoints != frog.getTotalPoints()) {
+					currentPoints = frog.getTotalPoints();
 					level.setNumber(currentPoints);
 
 				}
-				if(animal.getHealth() != 0){
-					if (currentHealth > animal.getHealth()) {
-						currentHealth = animal.getHealth();
-						level.setNumberOfHearts(currentHealth);
+				if(frog.getLives() != 0){
+					if (currentlives > frog.getLives()) {
+						currentlives = frog.getLives();
+						level.setNumberOfLives(currentlives);
 					}
 				}
 
-				if(animal.getHealth() == 0){
-					level.removeHearts();
+				if(frog.getLives() == 0){
+					level.removeLives();
 					System.out.print("GAME OVER");
 					mediaPlayer.stopMusic();
 					mediaPlayer.playGameOverMusic();
 					stopGame();
-					Alert alert = new Alert(AlertType.NONE, "Your Total Score: " + animal.getTotalPoints() + "!", ButtonType.CLOSE);
+					Alert alert = new Alert(AlertType.NONE, "Your Total Score: " + frog.getTotalPoints() + "!", ButtonType.CLOSE);
 					alert.setTitle("You Have Lost The Game!");
 					alert.show();
 					try{
@@ -340,8 +441,8 @@ public class Main extends Application {
 					currentStage.show();
 				}
 
-				if (animal.hasWon()) {
-					animal.resetEnds();
+				if (frog.hasWon()) {
+					frog.resetEnds();
 					mediaPlayer.stopMusic();
 					mediaPlayer.playChangeLevelMusic();
 					stopGame();
@@ -357,7 +458,7 @@ public class Main extends Application {
 						e.printStackTrace();
 					}
 					try{
-						changeLevel(level.getNextLevel(), currentStage, animal);
+						changeLevel(level.getNextLevel(), currentStage, frog);
 					}
 					catch (Exception e){
 						e.printStackTrace();
@@ -366,20 +467,35 @@ public class Main extends Application {
 			}
 		};
 	}
+
+	/**
+	 * This method starts the game.
+	 * It calles for the creation of the timer and starts the timer
+	 * The music of the game will also start playing when this method is called
+	 */
 	public void startGame() {
 		((World) currentStage.getScene().getRoot()).start();
-		level.setNumberOfHearts(8);
+		level.setNumberOfLives(8);
 		//level.playMusic();
 		mediaPlayer.playMusic();
 		createTimer();
 		timer.start();
 	}
 
+	/**
+	 * This method stops the game by calling for the stop of the timer
+	 */
 	public void stopGame() {
 		((World) currentStage.getScene().getRoot()).stop();
 		timer.stop();
 	}
 
+
+	/**
+	 * This method gets the name of the device the player is currently using
+	 * The method gets the name of the device from its specific environment variable
+	 * @return name of the device
+	 */
 	public String getComputerName(){
 		Map<String, String> env = System.getenv();
 		if (env.containsKey("COMPUTERNAME")){
