@@ -10,9 +10,10 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 /**
- * This class defines the standard properties of each level in the game.
- * This includes setting the lives, scores and passing levels along each class
+ * This class defines the standard properties that should be present in each level type of the game.
+ * This includes setting the lives, scores and passing levels along each class.
  */
+
 public class MyLevel extends World{
 	MediaPlayer mediaPlayer;
 	Class<MyLevel> nextLevel;
@@ -20,8 +21,8 @@ public class MyLevel extends World{
 
 	/**
 	 * This method defines how the levels should act.
-	 * The method is inherited from the parent class World
-	 * In this game, the level classes does nothing so the method is empty
+	 * The method is inherited from the parent class World.
+	 * In this game, the level classes does nothing so the method is empty.
 	 * @param now the timestamp of the current frame in nanoseconds
 	 */
 	@Override
@@ -30,8 +31,8 @@ public class MyLevel extends World{
 	}
 
 	/**
-	 * Class constuctor.
-	 * Creates an instance of MyLevel
+	 * Class constructor.
+	 * Creates an instance of MyLevel.
 	 * @param nextLevel the class that the game change to in the next round
 	 */
 	public MyLevel(Class<MyLevel> nextLevel) {
@@ -43,7 +44,7 @@ public class MyLevel extends World{
 	}
 
 	/**
-	 * This method sets the number of lives to be visible in the scene
+	 * This method sets the number of lives that will be visible in the scene.
 	 * @param numberOfLives the number of lives the frog has left
 	 */
 	public void setNumberOfLives(int numberOfLives){
@@ -59,7 +60,7 @@ public class MyLevel extends World{
 	};
 
 	/**
-	 * This method visibly removes lives from the level scene when called
+	 * This method visibly removes lives from the level scene when called.
 	 */
 	public void removeLives(){
 		this.removeHealth(lives);
@@ -67,7 +68,7 @@ public class MyLevel extends World{
 
 
 	/**
-	 * This method sets the number(scores) visible in the level scene
+	 * This method sets the number(scores) visible in the level scene.
 	 * @param points the current points of the player to be displayed
 	 */
 	public void setNumber(int points) {
@@ -82,7 +83,8 @@ public class MyLevel extends World{
 	}
 
 	/**
-	 * This method gets the class of the next level to be instantiated when called
+	 * This method gets the the next level to be displayed when called.
+	 * The next level is instantiated according to the given class passed by the previous level.
 	 * @return The next level to be displayed
 	 * @throws NoSuchMethodException
 	 * @throws IllegalAccessException

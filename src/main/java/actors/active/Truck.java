@@ -4,8 +4,8 @@ import actors.Actor;
 import javafx.scene.image.Image;
 
 /**
- * Class for the Truck obstacle in the game
- * extended from from Actor class
+ * This class defines the Truck obstacle in the game.
+ * Extended from Actor class.
  * @see Actor
  */
 public class Truck extends Actor {
@@ -28,8 +28,8 @@ public class Truck extends Actor {
 	}
 
 	/**
-	 * Class constructor for Truck
-	 * Creates an instance of Truck with the given position speed and size
+	 * Class constructor for Truck.
+	 * Creates an instance of Truck with the given position, source image, speed and size.
 	 * @param xpos x-coordinate of the truck
 	 * @param ypos y-coordinate of the truck
 	 * @param speed speed of the truck

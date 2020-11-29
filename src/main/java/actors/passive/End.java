@@ -4,17 +4,17 @@ import actors.Actor;
 import javafx.scene.image.Image;
 
 /**
- * This class sets the display for the frog holes of each level
- * The Ends will have to de deactivated for the frog to be able to enter
- * The activation of each hole is set to false at the start
+ * This defines the display for the frog holes of each level.
+ * The Ends will have to de deactivated for the frog to be able to enter.
+ * The activation of each hole is set to false at the start.
  */
 public class End extends Actor {
 	boolean activated = false;
 
 	/**
 	 * This method will set how the End (frog hole) is supposed to act.
-	 * This method is inherited from the parent class Actors and should be overridden.
-	 * In this game the End does not act or do anything so the method is empty.
+	 * This method is inherited from the parent class Actor.
+	 * In this game the End does not act or do anything.
 	 * @param now the timestamp of the frame in nanoseconds
 	 */
 	@Override
@@ -24,7 +24,7 @@ public class End extends Actor {
 
 	/**
 	 * Class constructor for End.
-	 * Creates an instance of End with the given position
+	 * Creates an instance of End with the given position.
 	 * @param x x-coordinate of the frog hole
 	 * @param y y-oordinate of the frog hole
 	 */
@@ -35,8 +35,8 @@ public class End extends Actor {
 	}
 
 	/**
-	 * This method sets the deactivated frog hole to become activated once called
-	 * This method will be called once the frog enters the frog hole
+	 * This method sets the deactivated frog hole to become activated once called.
+	 * This method will be called once the frog enters the frog hole.
 	 */
 	public void setEnd() {
 		setImage(new Image("file:src/main/java/images/FrogEnd.png", 70, 70, true, true));
@@ -44,9 +44,9 @@ public class End extends Actor {
 	}
 
 	/**
-	 * This method returns a true/false value depending on whether or not the frog hole is activated
-	 * If the frog hole is activated, the value will be true
-	 * This method is called to check if the frog has entered an activated hole
+	 * This method returns a true/false value depending on whether or not the frog hole is activated.
+	 * If the frog hole is activated, the value will be true, if not it will be false.
+	 * This method is called to check if the frog has entered an activated hole.
 	 * @return (boolean) returns the true/false value of whether the hole is activated or not
 	 */
 	public boolean isActivated() {
@@ -54,7 +54,7 @@ public class End extends Actor {
 	}
 
 	/**
-	 * This method will change the activated value of a deactivated hole from false to true and the value of an activated hole from true to false
+	 * This method will change the activated value of a deactivated hole from false to true and the value of an activated hole from true to false.
 	 */
 	public void toggle(){
 		if(!activated){

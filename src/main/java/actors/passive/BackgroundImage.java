@@ -4,9 +4,8 @@ import actors.Actor;
 import javafx.scene.image.Image;
 
 /**
- * Class for the display of a background image for the game.
- * Extended from class Actor.
- * Background image are set with a specific size in the game
+ * This class defines the display of a background image for the game.
+ * Background image are set with a specific size in the game.
  */
 public class BackgroundImage extends Actor {
 
@@ -24,7 +23,7 @@ public class BackgroundImage extends Actor {
 
 	/**
 	 * Class constructor for the background image.
-	 * Creates an instance of a Background image with given image source
+	 * Creates an instance of a Background image with given image source.
 	 * Sets the size, ratio of the image.
 	 * @param imageLink the source for the image to be displayed
 	 */

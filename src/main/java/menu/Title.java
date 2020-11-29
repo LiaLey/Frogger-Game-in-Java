@@ -9,14 +9,14 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 /**
- * This class defines the display of the Titles used in some scene in the game.
- * Defines the specific font, style and alignment used for titles in the game
+ * This class defines the display of the Titles used in scenes in the game.
+ * Defines the specific font, style and alignment used for titles in the game.
  */
 public class Title extends StackPane {
 
     /**
      * Class constuctor.
-     * Creates an instance of Title with given string
+     * Creates an instance of Title with given string.
      * @param name
      */
     public Title(String name){

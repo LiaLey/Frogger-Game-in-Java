@@ -14,13 +14,13 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 
 /**
- * This Class sets the display for the items of the menu
+ * This Class defines the display for the items of the menu.
  */
 public class MenuItem extends StackPane {
 
     /**
      * Class constructor.
-     * Creates new instance of Menu item with given name and button action
+     * Creates new instance of Menu item with given name and button action.
      * @param name name of the menu item to be displayed
      * @param myButtonAction button action that will be called on the menu item is clicked
      */
@@ -72,9 +72,8 @@ public class MenuItem extends StackPane {
     }
 
     /**
-     *
      * Class constructor.
-     * Creates new instance of Menu item with given name and button action
+     * Creates new instance of Menu item with given name and button action.
      * @param name name of the menu item to be displayed
      * @param myButtonAction button action that will be called on the menu item is clicked
      * @param v the width of the menu item

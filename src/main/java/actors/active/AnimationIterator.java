@@ -42,9 +42,9 @@ enum AnimationType {
 
 
 /**
- * Iterates an arrayList of different images to form a complete animation for movements
+ * Iterates an arrayList of different images to form a complete animation for movements.
  * Assumes that the first index in animations list is the resting position.
- * Therefore the resting postion image will be at index 0 of the arrayList.
+ * Therefore the resting position image will be at index 0 of the arrayList.
  */
 class AnimationIterator {
     public final ArrayList<Image> animations = new ArrayList<>();
@@ -52,10 +52,10 @@ class AnimationIterator {
     protected AnimationType type;
 
     /**
-     * Class Constuctor.
-     * Creates an instance of AnimationInterator with given animation type
-     * Stores the images into an arrayList to interate.
-     * @param animation The types of animations that can be used to constuct the animation iterator
+     * Class Constructor.
+     * Creates an instance of AnimationIterator with given animation type
+     * Stores the images into an arrayList to iterate.
+     * @param animation The types of animations that can be used to construct the animation iterator
      * @see AnimationType
      */
     protected AnimationIterator(AnimationType animation) {
@@ -85,7 +85,7 @@ class AnimationIterator {
     }
 
     /**
-     * This method loops the index of the arrayList of images
+     * This method loops the index of the arrayList of images.
      */
     protected void cycleIndex() {
         if (index == animations.size() - 1)
@@ -94,7 +94,7 @@ class AnimationIterator {
     }
 
     /**
-     * This method returns the next index in the arrayList of images when called
+     * This method returns the next index in the arrayList of images when called.
      * @return int - the index of the next image in the arrayList
      */
     protected int nextIndex() {
@@ -106,7 +106,7 @@ class AnimationIterator {
     }
 
     /**
-     * This method will return the next required image in the arrayList
+     * This method will return the next required image in the arrayList.
      * @return Image - the next image in the array
      */
     protected Image next() {
@@ -116,8 +116,8 @@ class AnimationIterator {
     }
 
     /**
-     * This method will return the image of the frog in resting position
-     * The resting postion image will be at index 0 of the arrayList
+     * This method will return the image of the frog in resting position.
+     * The resting position image will be at index 0 of the arrayList.
      * @return Image - the resting position image of the frog
      */
     protected Image restingPosition() {
@@ -126,7 +126,7 @@ class AnimationIterator {
     }
 
     /**
-     * This method resets the cycle of images in the arrayList and sets the index back to 0
+     * This method resets the cycle of images in the arrayList and sets the index back to 0.
      */
     protected void resetCycle() {
         index = 0;

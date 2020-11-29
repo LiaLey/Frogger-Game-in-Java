@@ -7,14 +7,14 @@ import javafx.scene.shape.*;
 import java.util.ArrayList;
 
 /**
- * This Class sets the properties of the Menu Boxes needed to construct the Pause and Main Menu
+ * This Class defines the properties of the Menu Boxes needed to construct the Pause and Main Menu.
  */
 public class MenuBox extends VBox{
 
     /**
-     * Class constructor
-     * Creates new instance of Menu Box with given menu items
-     * @param items Menu items needed to be add into the menu box
+     * Class constructor.
+     * Creates new instance of Menu Box with given menu items.
+     * @param items Menu items needed to be added into the menu box
      */
     public MenuBox(MenuItem...items){
 
@@ -27,10 +27,10 @@ public class MenuBox extends VBox{
     }
 
     /**
-     * Class constructor
-     * Creates new instance of Menu Box with given menu items
+     * Class constructor.
+     * Creates new instance of Menu Box with given menu items.
      * @param item Menu item needed to be added into the menu box
-     * @param line true/false value depending on whether the item needs a line seperator
+     * @param line true/false value depending on whether the item needs a line separator
      */
     public MenuBox(MenuItem item , boolean line){
 
@@ -38,8 +38,8 @@ public class MenuBox extends VBox{
     }
 
     /**
-     * Class constructor
-     * Creates new instance of Menu Box with the given menu item
+     * Class constructor.
+     * Creates new instance of Menu Box with the given menu item.
      * @param items arraylist of items needed to be added into the menu box
      */
     public MenuBox(ArrayList<MenuItem> items) {
@@ -51,7 +51,7 @@ public class MenuBox extends VBox{
     }
 
     /**
-     * This method creates a line separator for each item that needs to be added into the menu box
+     * This method creates a line separator for each item that needs to be added into the menu box.
      * @param length length of the line separator
      * @return the Line that separates the menu items
      */

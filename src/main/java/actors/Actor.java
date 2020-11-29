@@ -7,13 +7,13 @@ import world.World;
 import java.util.ArrayList;
 
 /**
- * This the Actor class that sets the movements of each child of the Actor in the scene
- * The Actor class also checks for interaction of each actor in the scene by keeping track of intersections of objects in the scene
+ * The Actor class defines the movements of each instance Actor in the scene.
+ * The Actor class also checks for interaction of each of its instance by keeping track of their intersections.
  */
 public abstract class Actor extends ImageView{
 
     /**
-     * Moves the actors to their given coordinates in the scene
+     * Moves the actors to their given coordinates on the pane.
      * @param dx value of increase/decrease (speed) on the horizontal plane
      * @param dy value of increase/decrease (speed) on the vertical plane
      */
@@ -23,7 +23,7 @@ public abstract class Actor extends ImageView{
     }
 
     /**
-     * This method returns the parent node of the actor when called
+     * This method returns the parent of scene when called.
      * @return World
      */
     public World getWorld() {
@@ -39,7 +39,7 @@ public abstract class Actor extends ImageView{
 //    }
 
     /**
-     * This method will return an arraylist of actors that are intersecting when called
+     * This method will return an arraylist of actors that are intersecting when called.
      * @param cls The class of objects that is being checked for intersections
      * @param <A>  Any class that extends from actors
      * @return
@@ -70,7 +70,8 @@ public abstract class Actor extends ImageView{
 //    }
 
     /**
-     * Abstract method of Actor class that should be overridden by inheriting classes
+     * Abstract method of Actor class that should be overridden by inheriting classes.
+     * Defines how the instances of Actors should act in each timeframe.
      * @param now the timestamp of current frame in nanoseconds
      */
     public abstract void act(long now);

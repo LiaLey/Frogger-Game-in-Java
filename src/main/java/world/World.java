@@ -16,16 +16,16 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
 /**
- * This class defines the main pane of the stage in which all actors and levels are added onto
- * The class also defines the event handler and how it should work
+ * This class defines the main settings of the stage. Levels inherits from World and Actors are added to the World here.
+ * The class also defines the event handler.
  */
 public abstract class World extends Pane {
 
     private AnimationTimer timer;
 
     /**
-     * Class constructor
-     * Creates an instance of World
+     * Class constructor.
+     * Creates an instance of World.
      */
     public World() {
     	
@@ -73,7 +73,7 @@ public abstract class World extends Pane {
 
     /**
      * This method creates a AnimationTimer for the game.
-     * Once the timer is created and started the method act for the actors in the scene will be called in each frame of the game
+     * Once the timer is created and started the method act() for the actors in the scene will be called in each frame of the game
      * @see Actor
      */
     public void createTimer() {
@@ -92,7 +92,7 @@ public abstract class World extends Pane {
     }
 
     /**
-     * This method will start the timer created
+     * This method will start the timer created.
      */
     public void start() {
     	createTimer();
@@ -100,14 +100,14 @@ public abstract class World extends Pane {
     }
 
     /**
-     * This method will stop the created timer
+     * This method will stop the created timer.
      */
     public void stop() {
         timer.stop();
     }
 
     /**
-     * This method will add objects that are instances of Actors into the scene
+     * This method will add objects that are instances of Actors into the scene.
      * @param actor actors to be added
      */
     public void add(Actor actor) {
@@ -115,7 +115,7 @@ public abstract class World extends Pane {
     }
 
     /**
-     * This method will remove objects that are instances of Actors from the Scene
+     * This method will remove objects that are instances of Actors from the Scene.
      * @param actor actors to be removed
      */
     public void remove(Actor actor) {
@@ -123,9 +123,9 @@ public abstract class World extends Pane {
     }
 
     /**
-     * This method will return a List of objects of the given class
+     * This method will return a List of objects of the given class.
      * @param cls class of the objects that will be returned
-     * @param <A> class that is the child of Actor
+     * @param <A> class that is a child class of Actor
      * @return a list of objects of the given class
      */
     public <A extends Actor> List<A> getObjects(Class<A> cls) {
@@ -139,7 +139,7 @@ public abstract class World extends Pane {
     }
 
     /**
-     * This method will add lives into the scene given the array of Lives
+     * This method will add lives into the scene given the array of Lives.
      * @param lives Array of Lives instances to be added into the scene
      */
     public void addHealth(ArrayList<Lives> lives){
@@ -149,7 +149,7 @@ public abstract class World extends Pane {
     }
 
     /**
-     * This method will remove lives from the scene given the array of Lives
+     * This method will remove lives from the scene given the array of Lives.
      * @param lives Array of Lives instances to be removed
      */
     public void removeHealth(ArrayList<Lives> lives){
@@ -160,7 +160,7 @@ public abstract class World extends Pane {
     }
 
     /**
-     * Abstract method of World class that should be overridden by inheriting classes
+     * Abstract method of World class that should be overridden by inheriting classes.
      * @param now the timestamp of current frame in nanoseconds
      */
     public abstract void act(long now);

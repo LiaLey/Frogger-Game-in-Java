@@ -4,7 +4,7 @@ import actors.Actor;
 import javafx.scene.image.Image;
 
 /**
- * Class for the WetTurtle in the game. The frog will use the WetTurtle as transport to cross the river
+ * This class defines the WetTurtle in the game. The frog will use the WetTurtle as transport to cross the river.
  */
 public class WetTurtle extends Actor {
 
@@ -16,10 +16,10 @@ public class WetTurtle extends Actor {
 	boolean sunk = false;
 
 	/**
-	 * This method moves the wet turtle when is called
-	 * The method will also change the image according to the timestamp of each frame to form a smooth animation of the wet turtle
-	 * The wet turtle will sink at a certain time interval and the frog will die if it stands on a sinking wet turtle
-	 * @param now the timestamp of each frame of the game
+	 * This method moves the wet turtle when is called.
+	 * The method will also change the image according to a time interval determined by specific timestamps to form a smooth animation of the WetTurtle.
+	 * The wet turtle will sink at a certain time interval and the frog will die if it stands on a sinking wet turtle.
+	 * @param now the timestamp of each frame of the game in nanoseconds
 	 */
 	@Override
 	public void act(long now) {
@@ -49,8 +49,8 @@ public class WetTurtle extends Actor {
 	}
 
 	/**
-	 * Class constructor for Wet Turtle
-	 * Creates an instance of WetTurtle with the given position, speed and size
+	 * Class constructor for Wet Turtle.
+	 * Creates an instance of WetTurtle with the given position, speed and size.
 	 * @param xpos x-coordinate of the wet turtle
 	 * @param ypos y-coordinate of the wet turtle
 	 * @param speed speed of the wet turtle
@@ -71,8 +71,8 @@ public class WetTurtle extends Actor {
 	}
 
 	/**
-	 * This method returns a true/false value depending on whether the wet turtle has sunk or not
-	 * The return value will be true if the log has sunk
+	 * This method returns a true/false value depending on whether the wet turtle has sunk or not.
+	 * The return value will be true if the log has sunk and false if not.
 	 * @return (boolean) sunk - true if the log has sunk and false if it has not
 	 */
 	public boolean isSunk() {
@@ -81,7 +81,7 @@ public class WetTurtle extends Actor {
 	}
 
 	/**
-	 * This method returns the speed of the wet turtle when called
+	 * This method returns the speed of the wet turtle when called.
 	 * @return (double) speed of the wet turtle
 	 */
 	public double getSpeed() {

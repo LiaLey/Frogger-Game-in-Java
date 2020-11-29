@@ -17,7 +17,7 @@ public class InfoController {
     private Label label;
 
     /**
-     * This method will close the window (Stage) once the button is clicked
+     * This method will close the window (Stage) once the button is clicked.
      * @param event the event that occurs
      */
     @FXML

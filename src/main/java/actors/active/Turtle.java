@@ -4,7 +4,7 @@ import actors.Actor;
 import javafx.scene.image.Image;
 
 /**
- * Class for the Turtle in the game. The frog will use the turtle as transport to cross the river
+ * This class defines the Turtle in the game. The frog will use the turtle as transport to cross the river.
  */
 public class Turtle extends Actor {
 	Image turtle1;
@@ -13,8 +13,8 @@ public class Turtle extends Actor {
 	private int speed;
 
 	/**
-	 * This method moves the turtle when is called
-	 * The method will also change the image according to the timestamp of each frame to form a smooth animation of the turtle
+	 * This method moves the turtle when is called.
+	 * The method will also change the image according to a time interval determined by specific timestamps to form a smooth animation of the turtle.
 	 * @param now the timestamp of each frame of the game
 	 */
 	@Override
@@ -41,8 +41,8 @@ public class Turtle extends Actor {
 	}
 
 	/**
-	 * Class constructor for Turtle
-	 * Creates an instance of Turtle with given position, speed and size
+	 * Class constructor for Turtle.
+	 * Creates an instance of Turtle with given position, speed and size.
 	 * @param xpos x-coordinate of the turtle
 	 * @param ypos y-coordinate of the turtle
 	 * @param speed speed of the turtle
@@ -62,7 +62,7 @@ public class Turtle extends Actor {
 	}
 
 	/**
-	 * This method returns the speed of the turtle when called
+	 * This method returns the speed of the turtle when called.
 	 * @return (double) the speed of the turtle
 	 */
 	public double getSpeed() {

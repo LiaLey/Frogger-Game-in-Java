@@ -4,7 +4,7 @@ import actors.Actor;
 import javafx.scene.image.Image;
 
 /**
- * Class for the Log obstacle in the game
+ * This class defines the Log obstacle in the game
  * extended from Actor
  * @see Actor
  */
@@ -14,7 +14,7 @@ public class Log extends Actor {
 
 	/**
 	 * This method moves the log when it is called.
-	 * This method is overridden from its parent class
+	 * This method is overridden from its parent class.
 	 * @see Actor
 	 * @param now the timestamp of each frame of the game in nanoseconds
 	 */
@@ -28,8 +28,8 @@ public class Log extends Actor {
 	}
 
 	/**
-	 * Class constructor for Log
-	 * Creates and instance of Log with the given position, image source, speed and size
+	 * Class constructor for Log.
+	 * Creates an instance of Log with the given position, image source, speed and size
 	 * @param xpos x-coordinate of the log
 	 * @param ypos y-coordinate of the log
 	 * @param speed speed of the log
@@ -45,7 +45,7 @@ public class Log extends Actor {
 	}
 
 	/**
-	 * This method returns the speed of the log when called
+	 * This method returns the speed of the log when called.
 	 * @return (double) speed of the car
 	 */
 	public double getSpeed() {

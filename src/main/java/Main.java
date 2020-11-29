@@ -32,27 +32,28 @@ import java.util.Map;
 
 
 /**
- * This class makes a Pair of a String and an Integer to keep records of the name and score of the player
- * This class extends from Pair and implements the public interface Comparable
- * Comparable imposes total ordering of objects in the class that implements it so it'll sort the scores of the player accordingly
- * @param <String> (user)  The name of the device/player
- * @param <Integer> (score) Total score of the player
+ * This class defines a Pair of String and Integer to keep records of the name and score of the player.
+ * This class extends from Pair and implements the public interface Comparable.
+ * Comparable imposes total ordering of objects in the class that implements it so it'll sort the scores of the player accordingly.
+ * @param <String> The name of the device/player (user)
+ * @param <Integer> (score) Total score of the player (score)
  */
 class ScorePair<String,Integer> extends Pair<String, Integer> implements Comparable{
 	/**
-	 * ScorePair class constructor
-	 * @param user  name of device
-	 * @param score -score
+	 * ScorePair class constructor.
+	 * Creates an instance of ScorePair.
+	 * @param user name of device
+	 * @param score score
 	 */
 	public ScorePair(String user, Integer score){
 		super(user,score);
 	}
 
 	/**
-	 * Method implemented from Comparable for the total ordering of objects
+	 * Method implemented from Comparable for the total ordering of objects.
 	 * @see Comparable
 	 * @param o  the ScorePair
-	 * @return score - sort the scores(value) in order
+	 * @return score Sort the scores(value) in order
 	 */
 	@Override
 	public int compareTo(Object o) {
@@ -77,18 +78,18 @@ public class Main extends Application {
 	ArrayList<ScorePair> scoreBoard = new ArrayList<>();
 
 	/**
-	 * Leaderboard class to create a Leaderboard to store scores of the players
-	 * Has a Main Menu button to allow players to go back to the Main Menu
+	 * Leaderboard class to define a Leaderboard to store scores of the players.
+	 * Has a Main Menu button to allow players to go back to the Main Menu.
 	 */
 	private class LeaderBoard extends Pane {
 
 		/**
-		 * Class for Menu Items that does not do anything on click
+		 * Class that defines Menu Items that does not do anything on click.
 		 */
 		private class PassiveMenuItem extends ButtonAction{
 			@Override
 			/**
-			 * Abstract method inherited from ButtonAction
+			 * Abstract method inherited from ButtonAction.
 			 * @see ButtonAction
 			 * @returns void
 			 * @throws IOException on input error
@@ -98,8 +99,8 @@ public class Main extends Application {
 		}
 
 		/**
-		 * LeaderBoard Class Contructor
-		 * Constructs a board displaying the scores of each player
+		 * LeaderBoard Class Constructor.
+		 * Creates an instance of a Leaderboard displaying the scores of each player.
 		 */
 		public LeaderBoard(){
 			BackgroundImage mainMenubg = new BackgroundImage("file:src/main/java/images/bg.jpg");
@@ -137,16 +138,14 @@ public class Main extends Application {
 	}
 
 	/**
-	 * Main Menu class
-	 * Displays the Main Menu of the game
-	 * Allows users to access the start of the game, the Leadeboard and the information of the game
-	 * as well as exit the game on click
+	 * Main Menu class that defines the Main Menu of the game.
+	 * Allows players to access the start of the game, the Leaderboard and the information of the game as well as exit the game on click.
 	 */
 	private class MainMenu extends Pane{
 
 		/**
-		 * Main menu class constructor
-		 * Constructs a menu box with various clickable items
+		 * Main menu class constructor.
+		 * Creates an instance of MenuBox with various clickable items.
 		 * @throws IOException
 		 */
 		public MainMenu() throws IOException {
@@ -201,18 +200,16 @@ public class Main extends Application {
 	}
 
 	/**
-	 * PauseMenu class
-	 * Sets a Pause Menu with items to let players restart the game,
-	 * resume the game, exit the game
-	 * and return to Main Menu upon a click
+	 * PauseMenu class defines a Pause Menu with items to let players restart the game,
+	 * resume the game, exit the game and return to Main Menu upon a click.
 	 */
 	private class Menu extends Pane{
 
 		/**
-		 * Class constructor for Menu
-		 * Creates menu boxes to list the menu items that can be accessed by the player
-		 * which includes the Resume, Restart, Exit and Exit to Main Menu buttons
-		 * @param pauseStage  the separate window that displays the pause menu
+		 * Class constructor for Menu.
+		 * Creates and instance of Menu to list the menu items that can be accessed by the player
+		 * which includes the Resume, Restart, Exit and Exit to Main Menu buttons.
+		 * @param pauseStage  the separate window (Stage) that displays the pause menu
 		 */
 		public Menu(Stage pauseStage){
 
@@ -276,8 +273,8 @@ public class Main extends Application {
 	}
 
 	/**
-	 * static method of the Application class
-	 * launches the application
+	 * Static method of the Application class.
+	 * Launches the application
 	 * @param args argument passed to the application
 	 */
 	public static void main(String[] args) {
@@ -285,8 +282,8 @@ public class Main extends Application {
 	}
 
 	/**
-	 * Method that runs whenever the application launches
-	 * Starts the application and shows the stage/window
+	 * Method that runs whenever the application launches.
+	 * Starts the application and shows the stage/window.
 	 * @param primaryStage  stage that shows whenever the program starts
 	 * @throws Exception upon error in starting the application
 	 */
@@ -304,9 +301,9 @@ public class Main extends Application {
 	}
 
 	/**
-	 * This method starts and displays the levels of the game each time it is called
-	 * The method adds the game menu into the scene so players will only have access to the mid game menu once the level starts
-	 * This method also adds the animal into the scene at the start of each level
+	 * This method starts and displays the levels of the game each time it is called.
+	 * The method adds the game menu into the scene so players will only have access to the mid game menu once the level starts.
+	 * This method also adds the animal into the scene at the start of each level.
 	 * @param myLevel the level that the game is supposed to change to
 	 * @param currentStage the current window running the game
 	 * @param frog the animal in the game
@@ -341,10 +338,10 @@ public class Main extends Application {
 	}
 
 	/**
-	 * This method saves the score of the player in a ScorePair
+	 * This method saves the score of the player in a ScorePair.
 	 * @see ScorePair
-	 * The score will be stored in a ScorePair array list
-	 * The array of scores will be written into the 'LeaderBoard' file each time
+	 * The score will be stored in a ScorePair array list.
+	 * The array of scores will be written into the 'LeaderBoard' file each time.
 	 * @throws IOException
 	 */
 	public void saveScore() throws IOException{
@@ -360,8 +357,8 @@ public class Main extends Application {
 	}
 
 	/**
-	 * Resets the animal to its orginal state, restores health and scores
-	 * Returns the scene of the game back to the Main Menu
+	 * Resets the animal to its original state, restores health and scores.
+	 * Returns the scene of the game back to the Main Menu.
 	 * @throws IOException
 	 */
 	public void resetGame() throws IOException {
@@ -371,8 +368,8 @@ public class Main extends Application {
 	}
 
 	/**
-	 * This methods loads the score that was stored in the file from the prvious game
-	 * Scores are read from the file and stored into the ScorePair Array list to be displayed in the LeaderBoard
+	 * This methods loads the score that was stored in the file from the previous game.
+	 * Scores are read from the file and stored into the ScorePair ArrayList to be displayed in the LeaderBoard.
 	 */
 	public void loadsScore() {
 
@@ -391,12 +388,10 @@ public class Main extends Application {
 
 
 	/**
-	 * This method creates the timer for the game and
-	 * will be called in each frame while active
-	 * The handle method inherited from AnimationTimer is overridden to
-	 * check the points of the player and health of the frog
-	 * It also checks if the player has won the round so the game can proceed to the next level
-	 * This is called in each timestamp of the frame(in nanoseconds)
+	 * This method creates the timer for the game and the timer will be called in each frame while active
+	 * The handle method inherited from AnimationTimer is overridden to check the points of the player and health of the frog
+	 * It also checks if the player has won or lost the round so the game can proceed to the next level or end the game.
+	 * This is called in each timestamp of the frame (in nanoseconds)
 	 * @see AnimationTimer
 	 */
 	public void createTimer() {
@@ -470,8 +465,8 @@ public class Main extends Application {
 
 	/**
 	 * This method starts the game.
-	 * It calles for the creation of the timer and starts the timer
-	 * The music of the game will also start playing when this method is called
+	 * It calls for the creation of the timer and starts the timer.
+	 * The background music of the game will also start playing when this method is called.
 	 */
 	public void startGame() {
 		((World) currentStage.getScene().getRoot()).start();
@@ -483,7 +478,7 @@ public class Main extends Application {
 	}
 
 	/**
-	 * This method stops the game by calling for the stop of the timer
+	 * This method stops the game by calling for the stop of the timer.
 	 */
 	public void stopGame() {
 		((World) currentStage.getScene().getRoot()).stop();
@@ -492,8 +487,8 @@ public class Main extends Application {
 
 
 	/**
-	 * This method gets the name of the device the player is currently using
-	 * The method gets the name of the device from its specific environment variable
+	 * This method gets the name of the device the player is currently using.
+	 * The method gets the name of the device from its specific environment variable.
 	 * @return name of the device
 	 */
 	public String getComputerName(){
