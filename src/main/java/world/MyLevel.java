@@ -38,7 +38,7 @@ public class MyLevel extends World{
 	public MyLevel(Class<MyLevel> nextLevel) {
 		
 
-		BackgroundImage froggerback = new actors.passive.BackgroundImage("file:src/main/java/images/iKogsKW2.png");
+		BackgroundImage froggerback = new actors.passive.BackgroundImage("file:src/main/resources/images/iKogsKW2.png");
 		this.add(froggerback);
 		this.nextLevel = nextLevel;
 	}

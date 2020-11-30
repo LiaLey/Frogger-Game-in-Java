@@ -28,7 +28,7 @@ public class Lives extends Actor{
      * @param y y-coordinates of the Lives image
      */
     public Lives(int size, int x, int y) {
-        setImage(new Image("file:src/main/java/images/froggerUp.png", size, size, true, true));
+        setImage(new Image("file:src/main/resources/images/froggerUp.png", size, size, true, true));
         setX(x);
         setY(y);
     }

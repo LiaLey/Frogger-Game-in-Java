@@ -31,7 +31,7 @@ public class End extends Actor {
 	public End(int x, int y) {
 		setX(x);
 		setY(y);
-		setImage(new Image("file:src/main/java/images/End.png", 60, 60, true, true));
+		setImage(new Image("file:src/main/resources/images/End.png", 60, 60, true, true));
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class End extends Actor {
 	 * This method will be called once the frog enters the frog hole.
 	 */
 	public void setEnd() {
-		setImage(new Image("file:src/main/java/images/FrogEnd.png", 70, 70, true, true));
+		setImage(new Image("file:src/main/resources/images/FrogEnd.png", 70, 70, true, true));
 		activated = true;
 	}
 
@@ -58,11 +58,11 @@ public class End extends Actor {
 	 */
 	public void toggle(){
 		if(!activated){
-			setImage(new Image("file:src/main/java/images/FrogEnd.png", 70, 70, true, true));
+			setImage(new Image("file:src/main/resources/images/FrogEnd.png", 70, 70, true, true));
 			activated = true;
 		}
 		else{
-			setImage(new Image("file:src/main/java/images/End.png", 60, 60, true, true));
+			setImage(new Image("file:src/main/resources/images/End.png", 60, 60, true, true));
 			activated = false;
 		}
 		//activated = !activated;

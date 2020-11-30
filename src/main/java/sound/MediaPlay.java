@@ -22,7 +22,7 @@ public class MediaPlay {
      * This method plays the background music once it is called.
      */
     public void playMusic() {
-        String musicFile = "src/main/java/sound/Frogger Main Song Theme (loop).mp3";
+        String musicFile = "src/main/resources/sound/Frogger Main Song Theme (loop).mp3";
         Media sound = new Media(new File(musicFile).toURI().toString());
         mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
@@ -34,7 +34,7 @@ public class MediaPlay {
      * This method is called on the level changes.
      */
     public void playChangeLevelMusic() {
-        String musicFile = "src/main/java/sound/change.mp3";
+        String musicFile = "src/main/resources/sound/change.mp3";
         Media sound = new Media(new File(musicFile).toURI().toString());
         mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.setCycleCount(1);
@@ -46,7 +46,7 @@ public class MediaPlay {
      * This method is called once the player runs out of lives and the game is over.
      */
     public void playGameOverMusic() {
-        String musicFile = "src/main/java/sound/gameover.mp3";
+        String musicFile = "src/main/resources/sound/gameover.mp3";
         Media sound = new Media(new File(musicFile).toURI().toString());
         mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.setCycleCount(1);

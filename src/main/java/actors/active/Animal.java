@@ -52,7 +52,7 @@ public class Animal extends Actor {
 	 * Controls of the frog are activated with the WASD keys.
 	 */
 	public Animal() {
-		setImage(new Image("file:src/main/java/images/froggerUp.png", IMAGE_SIZE, IMAGE_SIZE, true, true));
+		setImage(new Image("file:src/main/resources/images/froggerUp.png", IMAGE_SIZE, IMAGE_SIZE, true, true));
 		setX(300);
 		setY(679.8+MOVEMENT);
 
@@ -228,7 +228,7 @@ public class Animal extends Actor {
 	public void respawn(boolean died) {
 		setX(300);
 		setY(679.8 + MOVEMENT);
-		setImage(new Image("file:src/main/java/images/froggerUp.png", IMAGE_SIZE, IMAGE_SIZE, true, true));
+		setImage(new Image("file:src/main/resources/images/froggerUp.png", IMAGE_SIZE, IMAGE_SIZE, true, true));
 		blockInputControls = false;
 		if (died) {
 			addPoints(0, -50);
@@ -281,7 +281,7 @@ public class Animal extends Actor {
 	 * This method is called each time the frog manages to enter the frog hole.
 	 */
 	public void playWinMusic() {
-		String musicFile = "src/main/java/sound/win.mp3";
+		String musicFile = "src/main/resources/sound/win.mp3";
 		Media sound = new Media(new File(musicFile).toURI().toString());
 		mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.setCycleCount(1);

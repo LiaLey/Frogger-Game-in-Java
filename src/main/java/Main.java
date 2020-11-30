@@ -100,7 +100,7 @@ public class Main extends Application {
 		 * Creates an instance of a Leaderboard displaying the scores of each player.
 		 */
 		public LeaderBoard(){
-			BackgroundImage mainMenubg = new BackgroundImage("file:src/main/java/images/bg.jpg");
+			BackgroundImage mainMenubg = new BackgroundImage("file:src/main/resources/images/bg.jpg");
 
 			Title title = new Title("LeaderBoard");
 			title.setTranslateX(120);
@@ -148,7 +148,7 @@ public class Main extends Application {
 		public MainMenu() throws IOException {
 
 			Parent root = FXMLLoader.load(getClass().getResource("info.fxml"));
-			BackgroundImage mainMenubg = new BackgroundImage("file:src/main/java/images/arcade_bg.jpg");
+			BackgroundImage mainMenubg = new BackgroundImage("file:src/main/resources/images/arcade_bg.jpg");
 
 			Title title = new Title ("F R O G G E R");
 			title.setTranslateX(117);
@@ -210,7 +210,7 @@ public class Main extends Application {
 		 */
 		public Menu(Stage pauseStage){
 
-			ImageView image = new ImageView("file:src/main/java/images/bg.jpg");
+			ImageView image = new ImageView("file:src/main/resources/images/bg.jpg");
 
 			Text text = new Text("GAME PAUSED");
 			text.setTranslateY(65);

@@ -37,7 +37,7 @@ public class Car extends Actor {
      */
     public Car(int xpos, int ypos, int speed, int w, int h) {
 
-        setImage(new Image("file:src/main/java/images/car1Left.png", w,h, true, true));
+        setImage(new Image("file:src/main/resources/images/car1Left.png", w,h, true, true));
         setX(xpos);
         setY(ypos);
         this.speed = speed;

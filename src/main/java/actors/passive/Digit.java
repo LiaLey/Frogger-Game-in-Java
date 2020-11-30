@@ -29,7 +29,7 @@ public class Digit extends Actor {
 	 * @param y y-coordinate of the image
 	 */
 	public Digit(int n, int size, int x, int y) {
-		setImage(new Image("file:src/main/java/images/"+n+".png", size, size, true, true));
+		setImage(new Image("file:src/main/resources/images/"+n+".png", size, size, true, true));
 		setX(x);
 		setY(y);
 	}
