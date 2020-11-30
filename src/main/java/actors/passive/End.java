@@ -12,10 +12,10 @@ public class End extends Actor {
 	boolean activated = false;
 
 	/**
-	 * This method will set how the End (frog hole) is supposed to act.
+	 * This method will define how the End (frog hole) is supposed to act.
 	 * This method is inherited from the parent class Actor.
 	 * In this game the End does not act or do anything.
-	 * @param now the timestamp of the frame in nanoseconds
+	 * @param now The timestamp of the frame in nanoseconds
 	 */
 	@Override
 	public void act(long now) {
@@ -47,7 +47,7 @@ public class End extends Actor {
 	 * This method returns a true/false value depending on whether or not the frog hole is activated.
 	 * If the frog hole is activated, the value will be true, if not it will be false.
 	 * This method is called to check if the frog has entered an activated hole.
-	 * @return (boolean) returns the true/false value of whether the hole is activated or not
+	 * @return (boolean) The true/false value of whether the hole is activated or not
 	 */
 	public boolean isActivated() {
 		return activated;

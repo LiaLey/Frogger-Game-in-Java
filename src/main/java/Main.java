@@ -36,14 +36,14 @@ import java.util.Map;
  * This class extends from Pair and implements the public interface Comparable.
  * Comparable imposes total ordering of objects in the class that implements it so it'll sort the scores of the player accordingly.
  * @param <String> The name of the device/player (user)
- * @param <Integer> (score) Total score of the player (score)
+ * @param <Integer> Total score of the player (score)
  */
 class ScorePair<String,Integer> extends Pair<String, Integer> implements Comparable{
 	/**
 	 * ScorePair class constructor.
 	 * Creates an instance of ScorePair.
-	 * @param user name of device
-	 * @param score score
+	 * @param user Name of device
+	 * @param score Score
 	 */
 	public ScorePair(String user, Integer score){
 		super(user,score);
@@ -51,9 +51,8 @@ class ScorePair<String,Integer> extends Pair<String, Integer> implements Compara
 
 	/**
 	 * Method implemented from Comparable for the total ordering of objects.
-	 * @see Comparable
-	 * @param o  the ScorePair
-	 * @return score Sort the scores(value) in order
+	 * @param o  The ScorePair
+	 * @return Scores sorted in order
 	 */
 	@Override
 	public int compareTo(Object o) {
@@ -63,8 +62,7 @@ class ScorePair<String,Integer> extends Pair<String, Integer> implements Compara
 }
 
 /**
- * Main Class of the Application
- * @see javafx.application.Application
+ * Main Class of the Frogger Application
  */
 
 public class Main extends Application {
@@ -79,6 +77,7 @@ public class Main extends Application {
 
 	/**
 	 * Leaderboard class to define a Leaderboard to store scores of the players.
+	 * The scores are obtained from the arrayList of scores read from the LeaderBoard file
 	 * Has a Main Menu button to allow players to go back to the Main Menu.
 	 */
 	private class LeaderBoard extends Pane {
@@ -87,19 +86,17 @@ public class Main extends Application {
 		 * Class that defines Menu Items that does not do anything on click.
 		 */
 		private class PassiveMenuItem extends ButtonAction{
-			@Override
 			/**
 			 * Abstract method inherited from ButtonAction.
-			 * @see ButtonAction
-			 * @returns void
 			 * @throws IOException on input error
 			 * Does nothing, the Button will not act in Passive Menu Items
 			 */
+			@Override
 			public void act() throws IOException {}
 		}
 
 		/**
-		 * LeaderBoard Class Constructor.
+		 * LeaderBoard class Constructor.
 		 * Creates an instance of a Leaderboard displaying the scores of each player.
 		 */
 		public LeaderBoard(){
@@ -145,7 +142,7 @@ public class Main extends Application {
 
 		/**
 		 * Main menu class constructor.
-		 * Creates an instance of MenuBox with various clickable items.
+		 * Creates an instance of MainMenu with clickable items.
 		 * @throws IOException
 		 */
 		public MainMenu() throws IOException {
@@ -209,7 +206,7 @@ public class Main extends Application {
 		 * Class constructor for Menu.
 		 * Creates and instance of Menu to list the menu items that can be accessed by the player
 		 * which includes the Resume, Restart, Exit and Exit to Main Menu buttons.
-		 * @param pauseStage  the separate window (Stage) that displays the pause menu
+		 * @param pauseStage The separate window (Stage) that displays the pause menu
 		 */
 		public Menu(Stage pauseStage){
 
@@ -274,8 +271,8 @@ public class Main extends Application {
 
 	/**
 	 * Static method of the Application class.
-	 * Launches the application
-	 * @param args argument passed to the application
+	 * Launches the application.
+	 * @param args Argument passed to the application
 	 */
 	public static void main(String[] args) {
 		launch(args);
@@ -283,8 +280,8 @@ public class Main extends Application {
 
 	/**
 	 * Method that runs whenever the application launches.
-	 * Starts the application and shows the stage/window.
-	 * @param primaryStage  stage that shows whenever the program starts
+	 * Starts the application and shows the stage (window).
+	 * @param primaryStage Stage that shows whenever the program starts
 	 * @throws Exception upon error in starting the application
 	 */
 	@Override
@@ -301,12 +298,12 @@ public class Main extends Application {
 	}
 
 	/**
-	 * This method starts and displays the levels of the game each time it is called.
+	 * This method starts or changes and displays the levels of the game each time it is called.
 	 * The method adds the game menu into the scene so players will only have access to the mid game menu once the level starts.
 	 * This method also adds the animal into the scene at the start of each level.
-	 * @param myLevel the level that the game is supposed to change to
-	 * @param currentStage the current window running the game
-	 * @param frog the animal in the game
+	 * @param myLevel The level that the game is supposed to change to
+	 * @param currentStage The current window running the game
+	 * @param frog The animal in the game
 	 * @throws IOException upon input error
 	 */
 	public void changeLevel(MyLevel myLevel, Stage currentStage, Animal frog) throws IOException{
@@ -339,7 +336,6 @@ public class Main extends Application {
 
 	/**
 	 * This method saves the score of the player in a ScorePair.
-	 * @see ScorePair
 	 * The score will be stored in a ScorePair array list.
 	 * The array of scores will be written into the 'LeaderBoard' file each time.
 	 * @throws IOException upon error in reading/loading files
@@ -368,7 +364,7 @@ public class Main extends Application {
 	}
 
 	/**
-	 * This methods loads the score that was stored in the file from the previous game.
+	 * This methods loads the score that was stored in the LeaderBoard file from the previous game.
 	 * Scores are read from the file and stored into the ScorePair ArrayList to be displayed in the LeaderBoard.
 	 */
 	public void loadsScore() {
@@ -389,10 +385,9 @@ public class Main extends Application {
 
 	/**
 	 * This method creates the timer for the game and the timer will be called in each frame while active
-	 * The handle method inherited from AnimationTimer is overridden to check the points of the player and health of the frog
-	 * It also checks if the player has won or lost the round so the game can proceed to the next level or end the game.
+	 * The handle method inherited from AnimationTimer is overridden to check the points of the player and health of the frog in each frame
+	 * It also checks if the player has won or lost the round so the game can proceed to the next level or end.
 	 * This is called in each timestamp of the frame (in nanoseconds)
-	 * @see AnimationTimer
 	 */
 	public void createTimer() {
 		timer = new AnimationTimer() {
@@ -489,7 +484,7 @@ public class Main extends Application {
 	/**
 	 * This method gets the name of the device the player is currently using.
 	 * The method gets the name of the device from its specific environment variable.
-	 * @return name of the device
+	 * @return Name of the device
 	 */
 	public String getComputerName(){
 		Map<String, String> env = System.getenv();

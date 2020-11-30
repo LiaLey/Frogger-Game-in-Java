@@ -6,7 +6,6 @@ import javafx.scene.image.Image;
 /**
  * This class defines the Truck obstacle in the game.
  * Extended from Actor class.
- * @see Actor
  */
 public class Truck extends Actor {
 
@@ -14,9 +13,8 @@ public class Truck extends Actor {
 
 	/**
 	 * This method moves the truck when it is called.
-	 * This method is overridden from its parent class.
-	 * @see Actor
-	 * @param now the timestamp of each frame of the game in nanoseconds
+	 * This method is overridden from its parent class and defines how the truck moves.
+	 * @param now The timestamp of each frame of the game in nanoseconds
 	 */
 	@Override
 	public void act(long now) {
@@ -32,9 +30,9 @@ public class Truck extends Actor {
 	 * Creates an instance of Truck with the given position, source image, speed and size.
 	 * @param xpos x-coordinate of the truck
 	 * @param ypos y-coordinate of the truck
-	 * @param speed speed of the truck
-	 * @param w width of the truck
-	 * @param h height of the truck
+	 * @param speed Speed of the truck
+	 * @param w Width of the truck
+	 * @param h Height of the truck
 	 */
 	public Truck(String imageLink, int xpos, int ypos, int speed, int w, int h) {
 

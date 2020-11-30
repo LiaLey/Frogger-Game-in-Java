@@ -108,7 +108,7 @@ public abstract class World extends Pane {
 
     /**
      * This method will add objects that are instances of Actors into the scene.
-     * @param actor actors to be added
+     * @param actor Actors to be added
      */
     public void add(Actor actor) {
         getChildren().add(actor);
@@ -116,7 +116,7 @@ public abstract class World extends Pane {
 
     /**
      * This method will remove objects that are instances of Actors from the Scene.
-     * @param actor actors to be removed
+     * @param actor Actors to be removed
      */
     public void remove(Actor actor) {
         getChildren().remove(actor);
@@ -124,9 +124,9 @@ public abstract class World extends Pane {
 
     /**
      * This method will return a List of objects of the given class.
-     * @param cls class of the objects that will be returned
-     * @param <A> class that is a child class of Actor
-     * @return a list of objects of the given class
+     * @param cls Class of the objects that will be returned
+     * @param <A> Class that is a child class of Actor
+     * @return A list of objects of the given class
      */
     public <A extends Actor> List<A> getObjects(Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
@@ -160,8 +160,8 @@ public abstract class World extends Pane {
     }
 
     /**
-     * Abstract method of World class that should be overridden by inheriting classes.
-     * @param now the timestamp of current frame in nanoseconds
+     * Abstract method of World class that should be overridden by inheriting classes that should show how inheriting classes will act.
+     * @param now The timestamp of current frame in nanoseconds
      */
     public abstract void act(long now);
 }

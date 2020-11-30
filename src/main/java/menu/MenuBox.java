@@ -40,7 +40,7 @@ public class MenuBox extends VBox{
     /**
      * Class constructor.
      * Creates new instance of Menu Box with the given menu item.
-     * @param items arraylist of items needed to be added into the menu box
+     * @param items Arraylist of items needed to be added into the menu box
      */
     public MenuBox(ArrayList<MenuItem> items) {
         getChildren().add(createSeparator(270));
@@ -52,8 +52,8 @@ public class MenuBox extends VBox{
 
     /**
      * This method creates a line separator for each item that needs to be added into the menu box.
-     * @param length length of the line separator
-     * @return the Line that separates the menu items
+     * @param length Length of the line separator
+     * @return The Line that separates the menu items
      */
     private Line createSeparator(int length){
 

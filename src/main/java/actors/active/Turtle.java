@@ -13,9 +13,9 @@ public class Turtle extends Actor {
 	private int speed;
 
 	/**
-	 * This method moves the turtle when is called.
+	 * This method is inherited from the parent class and defines the movement of the turtle when is called.
 	 * The method will also change the image according to a time interval determined by specific timestamps to form a smooth animation of the turtle.
-	 * @param now the timestamp of each frame of the game
+	 * @param now The timestamp of each frame of the game
 	 */
 	@Override
 	public void act(long now) {
@@ -45,9 +45,9 @@ public class Turtle extends Actor {
 	 * Creates an instance of Turtle with given position, speed and size.
 	 * @param xpos x-coordinate of the turtle
 	 * @param ypos y-coordinate of the turtle
-	 * @param speed speed of the turtle
-	 * @param w width of the turtle
-	 * @param h height of the turtle
+	 * @param speed Speed of the turtle
+	 * @param w Width of the turtle
+	 * @param h Height of the turtle
 	 */
 	public Turtle(int xpos, int ypos, int speed, int w, int h) {
 
@@ -63,7 +63,7 @@ public class Turtle extends Actor {
 
 	/**
 	 * This method returns the speed of the turtle when called.
-	 * @return (double) the speed of the turtle
+	 * @return (double) The speed of the turtle
 	 */
 	public double getSpeed() {
 		return this.speed;

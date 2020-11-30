@@ -10,9 +10,9 @@ public class Digit extends Actor {
 
 	/**
 	 * Inherited abstract method that must be overridden.
-	 * This method sets how the Digit Images should act in each frame.
+	 * This method defines how the Digit Images should act in each frame.
 	 * In this game the Images will do nothing.
-	 * @param now the timestamp of the frame in nanoseconds
+	 * @param now The timestamp of the frame in nanoseconds
 	 */
 	@Override
 	public void act(long now) {
@@ -23,8 +23,8 @@ public class Digit extends Actor {
 	/**
 	 * Class constructor for the Digit.
 	 * Creates an instance of Digit with given image source, size and position.
-	 * @param n digit to be displayed
-	 * @param size size of the image
+	 * @param n Digit to be displayed
+	 * @param size Size of the image
 	 * @param x x-coordinate of the image
 	 * @param y y-coordinate of the image
 	 */

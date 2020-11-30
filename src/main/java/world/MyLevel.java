@@ -33,7 +33,7 @@ public class MyLevel extends World{
 	/**
 	 * Class constructor.
 	 * Creates an instance of MyLevel.
-	 * @param nextLevel the class that the game change to in the next round
+	 * @param nextLevel The class that the game change to in the next round
 	 */
 	public MyLevel(Class<MyLevel> nextLevel) {
 		
@@ -45,7 +45,7 @@ public class MyLevel extends World{
 
 	/**
 	 * This method sets the number of lives that will be visible in the scene.
-	 * @param numberOfLives the number of lives the frog has left
+	 * @param numberOfLives The number of lives the frog has left
 	 */
 	public void setNumberOfLives(int numberOfLives){
 		getChildren().removeIf(x -> x instanceof Lives);
@@ -69,7 +69,7 @@ public class MyLevel extends World{
 
 	/**
 	 * This method sets the number(scores) visible in the level scene.
-	 * @param points the current points of the player to be displayed
+	 * @param points The current points of the player to be displayed
 	 */
 	public void setNumber(int points) {
 		getChildren().removeIf(x -> x instanceof Digit);

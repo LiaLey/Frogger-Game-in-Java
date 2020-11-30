@@ -10,7 +10,7 @@ import javafx.scene.image.Image;
 public class Lives extends Actor{
 
     /**
-     * This method will set how the Lives is supposed to act.
+     * This method will define how the Lives is supposed to act.
      * This method is inherited from the parent class Actors.
      * In this game the Lives does not act or do anything.
      * @param now the timestamp of the frame in nanoseconds
@@ -23,7 +23,7 @@ public class Lives extends Actor{
     /**
      * Class constructor for Lives.
      * Creates an instance of Lives with the given position.
-     * @param size size of the Lives image
+     * @param size Size of the Lives image
      * @param x x-coordinates of the Lives image
      * @param y y-coordinates of the Lives image
      */

@@ -32,6 +32,9 @@ public class Animal extends Actor {
 	private final AnimationIterator waterDeathAnimation = new AnimationIterator(AnimationType.WATER_DEATH);
 	private final AnimationIterator carDeathAnimation = new AnimationIterator(AnimationType.CAR_DEATH);
 
+	/**
+	 * To stop or start frog movement.
+	 */
 	public boolean blockInputControls = false;
 	private boolean carDeath = false;
 	private boolean waterDeath = false;
@@ -93,11 +96,13 @@ public class Animal extends Actor {
 	}
 
 	/**
-	 * This method tells the frog how to act when called. The method is called every frame by the animation timer.
+	 * This method tells the frog how to act every frame.
 	 * This method keeps track of the position of the frog in each frame.
 	 * By keeping track of the position of the frog, this method checks for intersections with other objects and adds points or calls for death accordingly.
-	 * The method also checks if the frog has entered the frog hole and awards points.
-	 * @param now
+	 * If it intersects with obstacles or sinking turtles, the frog will die and respawn.
+	 * The method also checks if the frog has entered the frog hole and awards points to the player.
+	 * If the frog intersects with a hole that has been activated, the frog will die and respawn
+	 * @param now The timestamp of the frame of the game in nanoseconds
 	 */
 	@Override
 	public void act(long now) {
@@ -174,8 +179,9 @@ public class Animal extends Actor {
 	/**
 	 * The death animation of the frog will start to display once the method is called.
 	 * The method will show the death images in sequence and forms an animation loop.
-	 * @param animation the arrayList of images
-	 * @param now the timestamp of each frame in the game in nanoseconds
+	 * After the death, the method will respawn the frog and deduct the life of the frog
+	 * @param animation The arrayList of images
+	 * @param now The timestamp of each frame in the game in nanoseconds
 	 */
 	public void initiateDeathAnimation(AnimationIterator animation, long now){
 		blockInputControls = true;
@@ -217,7 +223,7 @@ public class Animal extends Actor {
 	 * This method will respawn the frog to its starting position when called.
 	 * It will also check if the respawn is triggered by the death of the frog or not.
 	 * If so, scores will be deducted.
-	 * @param died boolean value of whether of not the frog has died when triggering the respawn
+	 * @param died Boolean value of whether of not the frog has died when triggering the respawn
 	 */
 	public void respawn(boolean died) {
 		setX(300);
@@ -230,7 +236,7 @@ public class Animal extends Actor {
 	}
 
 	/**
-	 * This method will reset the number of frog holes filled back to 0
+	 * This method will reset the number of frog holes filled to 0
 	 */
 	public void resetEnds() {
 		numberOfEndsActivated = 0;
@@ -238,7 +244,7 @@ public class Animal extends Actor {
 
 	/**
 	 * This method will reset the health and points of the game.
-	 * it will also reset of the number of frog holes entered back to 0.
+	 * It will also reset of the number of frog holes entered to 0.
 	 */
 	public void reset(){
 		resetEnds();
@@ -249,9 +255,9 @@ public class Animal extends Actor {
 	}
 
 	/**
-	 * This method wil add height points and the aux points scored by the player.
-	 * @param heightScore the vertical distance travelled by the frog
-	 * @param auxScore the scores earned when winning the level or entering a frog hole
+	 * This method will add height points and the aux points scored by the player.
+	 * @param heightScore The vertical distance travelled by the frog
+	 * @param auxScore The scores earned when winning the level or entering a frog hole
 	 */
 	public void addPoints(int heightScore, int auxScore) {
 		this.heightPoints += heightScore;
@@ -263,7 +269,7 @@ public class Animal extends Actor {
 
 	/**
 	 * This method returns the current health of the frog when called.
-	 * @return (int) the health (number of lives) left
+	 * @return (int) The health (number of lives) left
 	 */
 	public int getLives(){
 		return lives;
@@ -272,7 +278,7 @@ public class Animal extends Actor {
 
 	/**
 	 * This method will play the winning music when called.
-	 * This method is called when the frog manages to enter the frog hole.
+	 * This method is called each time the frog manages to enter the frog hole.
 	 */
 	public void playWinMusic() {
 		String musicFile = "src/main/java/sound/win.mp3";

@@ -56,7 +56,6 @@ class AnimationIterator {
      * Creates an instance of AnimationIterator with given animation type
      * Stores the images into an arrayList to iterate.
      * @param animation The types of animations that can be used to construct the animation iterator
-     * @see AnimationType
      */
     protected AnimationIterator(AnimationType animation) {
         type = animation;
@@ -95,7 +94,7 @@ class AnimationIterator {
 
     /**
      * This method returns the next index in the arrayList of images when called.
-     * @return int - the index of the next image in the arrayList
+     * @return int - The index of the next image in the arrayList
      */
     protected int nextIndex() {
         int tempIndex = index;
@@ -107,7 +106,7 @@ class AnimationIterator {
 
     /**
      * This method will return the next required image in the arrayList.
-     * @return Image - the next image in the array
+     * @return Image - The next image in the array
      */
     protected Image next() {
         Image res = animations.get(index);
@@ -118,7 +117,7 @@ class AnimationIterator {
     /**
      * This method will return the image of the frog in resting position.
      * The resting position image will be at index 0 of the arrayList.
-     * @return Image - the resting position image of the frog
+     * @return Image - The resting position image of the frog
      */
     protected Image restingPosition() {
         index = 1;      // allows for non-resting animation immediately after resuming from rest

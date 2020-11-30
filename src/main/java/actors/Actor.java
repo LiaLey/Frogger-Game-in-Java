@@ -14,8 +14,8 @@ public abstract class Actor extends ImageView{
 
     /**
      * Moves the actors to their given coordinates on the pane.
-     * @param dx value of increase/decrease (speed) on the horizontal plane
-     * @param dy value of increase/decrease (speed) on the vertical plane
+     * @param dx Value of increase/decrease (speed) on the horizontal plane
+     * @param dy Value of increase/decrease (speed) on the vertical plane
      */
     public void move(double dx, double dy) {
         setX(getX() + dx);
@@ -42,7 +42,7 @@ public abstract class Actor extends ImageView{
      * This method will return an arraylist of actors that are intersecting when called.
      * @param cls The class of objects that is being checked for intersections
      * @param <A>  Any class that extends from actors
-     * @return
+     * @return An arrayList of objects intersecting with the object that calls the method
      */
     public <A extends Actor> ArrayList<A> getIntersectingObjects(Class<A> cls){
         ArrayList<A> someArray = new ArrayList<A>();
@@ -72,7 +72,7 @@ public abstract class Actor extends ImageView{
     /**
      * Abstract method of Actor class that should be overridden by inheriting classes.
      * Defines how the instances of Actors should act in each timeframe.
-     * @param now the timestamp of current frame in nanoseconds
+     * @param now The timestamp of current frame in nanoseconds
      */
     public abstract void act(long now);
 
