@@ -1,5 +1,6 @@
 package sound;
 
+import application.Main;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 

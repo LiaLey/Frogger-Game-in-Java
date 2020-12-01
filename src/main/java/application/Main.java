@@ -68,6 +68,7 @@ class ScorePair<String,Integer> extends Pair<String, Integer> implements Compara
  */
 
 public class Main extends Application {
+
 	AnimationTimer timer;
 	Animal frog = new Animal();
 	MyLevel level; //test
@@ -481,7 +482,6 @@ public class Main extends Application {
 		((World) currentStage.getScene().getRoot()).stop();
 		timer.stop();
 	}
-
 
 	/**
 	 * This method gets the name of the device the player is currently using.

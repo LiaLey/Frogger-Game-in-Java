@@ -15,7 +15,7 @@ import javafx.scene.media.MediaPlayer;
  */
 
 public class MyLevel extends World{
-	MediaPlayer mediaPlayer;
+
 	Class<MyLevel> nextLevel;
 	ArrayList<Lives> lives = new ArrayList<>();
 

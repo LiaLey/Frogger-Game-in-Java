@@ -4,6 +4,7 @@ package actors.active;
 import actors.*;
 import actors.passive.End;
 
+import application.Main;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 
@@ -11,6 +12,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import sound.MediaPlay;
 
 import java.io.File;
 
