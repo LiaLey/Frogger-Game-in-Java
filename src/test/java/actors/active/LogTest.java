@@ -5,12 +5,18 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Junit test for Log
+ */
 public class LogTest {
 
     private Log log;
     private JFXPanel panel = new JFXPanel();
 
 
+    /**
+     * Test set speed
+     */
     @Test
     public void testSetSpeed() {
         log = new Log("file:src/main/java/images/log3.png", 150, 0, 166, 0.75);
@@ -22,6 +28,9 @@ public class LogTest {
 
     }
 
+    /**
+     * Test set position
+     */
     @Test
     public void testSetPos() {
         log = new Log("file:src/main/java/images/log3.png", 150, 0, 166, 0.75);

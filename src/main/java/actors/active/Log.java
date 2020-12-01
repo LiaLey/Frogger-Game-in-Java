@@ -9,7 +9,10 @@ import javafx.scene.image.Image;
  */
 public class Log extends Actor {
 
-	public double speed;
+	/**
+	 * speed of the moving log
+	 */
+	protected double speed;
 
 	/**
 	 * This method moves the log when it is called.

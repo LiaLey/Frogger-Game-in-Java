@@ -4,14 +4,20 @@ import javafx.embed.swing.JFXPanel;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * Junit Test for Animal
+ */
 public class AnimalTest {
 
 
     private Animal animal;
     private JFXPanel panel = new JFXPanel();
 
+    /**
+     * Test lives reset
+     */
     @Test
-    public void testgetHealthReset() {
+    public void testLivesReset() {
 
         animal = new Animal();
         int health = animal.getLives();
@@ -25,8 +31,11 @@ public class AnimalTest {
 
     }
 
+    /**
+     * Test points reset
+     */
     @Test
-    public void testgetTotalPointsReset() {
+    public void testTotalPointsReset() {
 
         animal = new Animal();
         int points = animal.getTotalPoints();
@@ -41,6 +50,9 @@ public class AnimalTest {
 
     }
 
+    /**
+     * Test method HasWon()
+     */
     @Test
     public void testHasWon() {
 
@@ -55,6 +67,9 @@ public class AnimalTest {
 
     }
 
+    /**
+     * Test max range reset
+     */
     @Test
     public void testMaxRangeReset() {
 

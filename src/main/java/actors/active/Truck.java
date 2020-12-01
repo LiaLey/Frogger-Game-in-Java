@@ -28,6 +28,7 @@ public class Truck extends Actor {
 	/**
 	 * Class constructor for Truck.
 	 * Creates an instance of Truck with the given position, source image, speed and size.
+	 * @param imageLink image source of the truck
 	 * @param xpos x-coordinate of the truck
 	 * @param ypos y-coordinate of the truck
 	 * @param speed Speed of the truck

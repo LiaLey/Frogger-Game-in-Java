@@ -10,6 +10,9 @@ import actors.passive.End;
  */
 public class LevelType4 extends MyLevel{
 
+    /**
+     * next level to be displayed
+     */
     public static  Class myNextLevel = LevelType5.class;
 
     /**

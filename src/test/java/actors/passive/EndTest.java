@@ -6,11 +6,17 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Junit Test for End Class
+ */
 public class EndTest {
 
     private End end;
     private JFXPanel panel = new JFXPanel();
 
+    /**
+     * Test for method isActivated
+     */
     @Test
     public void testSetActivate() {
         end = new End(13, 96);
@@ -22,6 +28,9 @@ public class EndTest {
 
     }
 
+    /**
+     * Test for toggle
+     */
     @Test
     public void testToggleActivated() {
 
@@ -41,6 +50,9 @@ public class EndTest {
 
     }
 
+    /**
+     * Test for setting position
+     */
     @Test
     public void testSetPos() {
         end = new End(13, 96);

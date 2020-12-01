@@ -46,9 +46,18 @@ enum AnimationType {
  * Assumes that the first index in animations list is the resting position.
  * Therefore the resting position image will be at index 0 of the arrayList.
  */
-class AnimationIterator {
-    public final ArrayList<Image> animations = new ArrayList<>();
+public class AnimationIterator {
+    /**
+     * ArrayList to store images
+     */
+    protected final ArrayList<Image> animations = new ArrayList<>();
+    /**
+     * index of the ArrayList
+     */
     protected int index = 0;
+    /**
+     * type of animation to display
+     */
     protected AnimationType type;
 
     /**
@@ -57,7 +66,7 @@ class AnimationIterator {
      * Stores the images into an arrayList to iterate.
      * @param animation The types of animations that can be used to construct the animation iterator
      */
-    protected AnimationIterator(AnimationType animation) {
+    public AnimationIterator(AnimationType animation) {
         type = animation;
         if (animation == AnimationType.UP) {
             animations.add(new Image("file:src/main/resources/images/froggerUp.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));

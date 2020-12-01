@@ -1,3 +1,5 @@
+package application;
+
 import actors.active.Animal;
 import actors.passive.BackgroundImage;
 import actors.passive.Lives;
@@ -41,7 +43,7 @@ import java.util.Map;
 class ScorePair<String,Integer> extends Pair<String, Integer> implements Comparable{
 	/**
 	 * ScorePair class constructor.
-	 * Creates an instance of ScorePair.
+	 * Creates an instance of ScorePair containing a String (Name) and Integer (Score)
 	 * @param user Name of device
 	 * @param score Score
 	 */
@@ -78,7 +80,7 @@ public class Main extends Application {
 	/**
 	 * Leaderboard class to define a Leaderboard to store scores of the players.
 	 * The scores are obtained from the arrayList of scores read from the LeaderBoard file
-	 * Has a Main Menu button to allow players to go back to the Main Menu.
+	 * Has a Main Menu button to allow players to go back to the application.Main Menu.
 	 */
 	private class LeaderBoard extends Pane {
 
@@ -410,7 +412,7 @@ public class Main extends Application {
 
 				if(frog.getLives() == 0){
 					level.removeLives();
-					System.out.print("GAME OVER");
+					System.out.print("GAME OVER\n");
 					mediaPlayer.stopMusic();
 					mediaPlayer.playGameOverMusic();
 					stopGame();

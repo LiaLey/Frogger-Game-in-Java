@@ -22,8 +22,17 @@ import java.io.File;
 public class Animal extends Actor {
 
 	MediaPlayer mediaPlayer;
+	/**
+	 * Size of the animal(frog) image
+	 */
 	protected static final int IMAGE_SIZE = 40;
+	/**
+	 * fixed vertical movement distance for the animal
+	 */
 	protected final double MOVEMENT = 13.3333333 * 2;
+	/**
+	 * fixed horizontal movement distance for the animal
+	 */
 	protected final double MOVEMENT_X = 10.666666 * 2;
 	private final AnimationIterator upAnimation = new AnimationIterator(AnimationType.UP);
 	private final AnimationIterator downAnimation = new AnimationIterator(AnimationType.DOWN);
@@ -39,8 +48,17 @@ public class Animal extends Actor {
 	private boolean carDeath = false;
 	private boolean waterDeath = false;
 
+	/**
+	 * fixed lives of the animal(frog)
+	 */
 	protected int lives = 8;
+	/**
+	 * starting points of the player
+	 */
 	protected int auxPoints = 0;
+	/**
+	 * starting height range of the animal
+	 */
 	protected int heightPoints = -93;
 	int numberOfEndsActivated = 0;
 	int maxRangeAchieved = 800;

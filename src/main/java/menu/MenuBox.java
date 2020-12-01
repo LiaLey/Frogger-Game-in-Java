@@ -7,7 +7,7 @@ import javafx.scene.shape.*;
 import java.util.ArrayList;
 
 /**
- * This Class defines the properties of the Menu Boxes needed to construct the Pause and Main Menu.
+ * This Class defines the properties of the Menu Boxes needed to construct the Pause and application.Main Menu.
  */
 public class MenuBox extends VBox{
 

@@ -5,11 +5,17 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Junit test for WetTurtle
+ */
 public class WetTurtleTest {
 
     private WetTurtle wetTurtle;
     private JFXPanel panel = new JFXPanel();
 
+    /**
+     * Test set position
+     */
     @Test
     public void testSetPos() {
         wetTurtle = new WetTurtle(500, 376, -1, 130, 130);
@@ -20,8 +26,11 @@ public class WetTurtleTest {
 
     }
 
+    /**
+     * Test set speed, get speed
+     */
     @Test
-    public void testSetSpeed() {
+    public void testSpeed() {
         wetTurtle = new WetTurtle(500, 376, -1, 130, 130);
         double expSpeed = wetTurtle.getSpeed();
         assertEquals(-1, expSpeed, 0.0);
@@ -31,6 +40,9 @@ public class WetTurtleTest {
 
     }
 
+    /**
+     * Test method isSunk()
+     */
     @Test
     public void testSunk() {
         wetTurtle = new WetTurtle(500, 376, -1, 130, 130);

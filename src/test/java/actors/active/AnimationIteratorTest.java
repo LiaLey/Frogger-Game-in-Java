@@ -5,6 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Junit Test for AnimationIterator
+ */
 public class AnimationIteratorTest {
 
     private AnimationIterator upAnimation;
@@ -13,6 +16,9 @@ public class AnimationIteratorTest {
     private AnimationIterator downAnimation;
     private JFXPanel panel = new JFXPanel();
 
+    /**
+     * Test setting animation
+     */
     @Test
     public void testSet() {
 
@@ -22,6 +28,9 @@ public class AnimationIteratorTest {
 
     }
 
+    /**
+     * Test index
+     */
     @Test
     public void testNextIndex() {
 
@@ -35,6 +44,9 @@ public class AnimationIteratorTest {
 
     }
 
+    /**
+     * Test index reset
+     */
     @Test
     public void testResetIndex() {
 
@@ -52,6 +64,9 @@ public class AnimationIteratorTest {
 
     }
 
+    /**
+     * Test auto cycle of index
+     */
     @Test
     public void testAutoCycle() {
 
