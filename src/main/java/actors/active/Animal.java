@@ -23,6 +23,9 @@ import java.io.File;
  */
 public class Animal extends Actor {
 
+	/**
+	 * MediaPlayer to play the music
+	 */
 	MediaPlayer mediaPlayer;
 	/**
 	 * Size of the animal(frog) image
@@ -76,7 +79,7 @@ public class Animal extends Actor {
 	private boolean waterDeath = false;
 
 	/**
-	 * fixed lives of the animal(frog)
+	 * fixed lives of the animal (frog)
 	 */
 	protected int lives = 8;
 	/**
@@ -147,7 +150,7 @@ public class Animal extends Actor {
 	}
 
 	/**
-	 * This method is inherited from class Actor and defines how th frog acts every frame.
+	 * This method is inherited from class Actor and defines how the frog acts every frame.
 	 * This method keeps track of the position of the frog in each frame.
 	 * By keeping track of the position of the frog, this method checks for intersections with other objects and adds points or calls for death accordingly.
 	 * If it intersects with obstacles or sinking turtles, the frog will die and respawn.
