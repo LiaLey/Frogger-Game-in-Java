@@ -1,22 +1,23 @@
 ### COMP2042_CW_CeliaLimErnYin
 
-### Screenshot of Game 
+### Screenshots of Game 
 ---
 ![Image test](src/main/resources/images/FroggerMain.png)
 ![Image test](src/main/resources/images/FroggerGame.png)
+![Image test](src/main/resources/images/FroggerPause.png)
 
 
 ### Refactoring 
 ---
 - <h4>Packaging</h4>
 
-Originally the classes were all cluttered together under one package. Therefore, I packaged related classes together.
-1. **actors** - Contains classes that will define objects that will be visible on the stage (window).
+Related classes were packaged together.
+1. **actors** - Contains classes that define objects visible on the stage.
    
-   - **actors.active** - Contains classes of actors that shows movement in the stage. Eg. Animal, Car
-   - **actors.passive** - Contains classes of actors that are static in the stage. Eg. Background Image, Lives
+   - **actors.active** - Contains classes of actors that shows movement. Eg. Animal, Car
+   - **actors.passive** - Contains classes of actors that are static. Eg. Background Image, Lives
 
-2. **world** - Contains classes that defines the stage setting. Eg. LevelType1, MyLevel, World
+2. **world** - Contains classes that defines the stage setting. Eg. LevelType1, World
 
 3. **menu** - Contains classes used to define construction of Menus
 
@@ -26,31 +27,28 @@ Originally the classes were all cluttered together under one package. Therefore,
 
 - <h4>Breaking up of Classes</h4>  
 
-To improve encapsulation and promote single responsibility, large classes like Animal was broken down. An additional AnimationIterator class was added to separately control the animations of the animal.
-The Obstacle class was also broken down to a Car class and a Truck class. 
-A MediaPlay class was also added for playing music to promote single responsibility.  
+To improve encapsulation and promote single responsibility, large classes like Animal was broken down. An additional AnimationIterator class separately controls the animal animations 
+The Obstacle class was also broken down. A MediaPlay class was also separately added for playing music.  
 
 - <h4> Design Patterns</h4> 
 
 Included an MVC pattern to control the MainMenu and show the Info window using scene builder. 
 
 - <h4>Naming Convention Changes</h4>
-The naming convention for a few methods, fields and classes were changed to avoid confusion. 
-Eg. MyStage was changed to MyLevel to avoid confusion with the Stage class in JavaFX.
-The stop() and start() method in Main class were also changed to stopGame() and startGame() to avoid 
-confusion with the stop() and start() method of the timer in World class.
+Some naming conventions were changed to avoid confusion and disorientation that was present in the orginal code. 
+Eg. MyStage was changed to MyLevel to avoid confusion with the JavaFX Stage class.
+
 
 ### Code Maintenance
 ---
 
 - Scoring System
 
-Made changes to the scoring system where points will be added based on travel distance (along the vertical plane) by the player in each round in addition to the 
+Points will now be added based on travel distance (along the vertical plane) by the player in each round in addition to the 
 points earned after winning each level.
 
 - Winning System
 
-Previously, there was a bug where frog holes that have been filled can still be entered by the frog.
 Changes were made so that frog holes can no longer be activated for a second time. 
 
 - Display of scores
@@ -59,13 +57,12 @@ Made changes on the display of scores so that the images of scores would not ove
 
 - Animation of Frog
 
-Made changes in the animation of the frog. A separate class was created to handle the animation of the movements of the frog.
+A separate class was created to handle the animation of the movements of the frog.
 Images of the frog are now stored in an array to be looped every frame to form an animation.
 
 - Movement on Obstacles
 
-Made changes to the code defining the movement of the frog when standing on obstacles. Instead of fixing the speed of the frog, we will get the speed of the obstacle and assigned it to the frog
-so it will move in time with the obstacle.
+Instead of fixing the speed of the frog, we will get the speed of the obstacles and assigned it to the frog so it will move in time with the obstacle.
 
 
 ### Additions
@@ -73,31 +70,31 @@ so it will move in time with the obstacle.
 
 - Main Menu 
 
-Added an interactive Main Menu for the game displaying options to start the game, exit the game, access the leaderboard or the info Menu.
+Added a Main Menu  with options to start the game, exit the game, access the leaderboard or the info Menu.
 
 - LeaderBoard
 
-Added a Leaderboard displaying all the scores of the players after each game. The Leaderboard is a permanent score listing of the game.
+Added a permanent Leaderboard displaying all the scores of the players in order.
 The scores are stored in a file and loaded each time the game application starts.
 
 - Information Menu
 
-Added an Info Menu using Scence Builder to include an MVC pattern in the design. There is a controller class that controls the functions of the Info Menu.
-The Info Menu shows simple information on the operations of the game.
+Added an Info Menu using that shows the simple operations of the game. A controller class controls the functions of the Info Menu.
+
 
 - Pause Menu
 
-Added a mid-game pause Menu so players can pause the game. The pause Menu also lets players restart the game , resume the game, exit back to the main menu or exit the game entirely.
+Added a mid-game pause Menu so players can pause, resume, restart the game, exit to the main menu or exit the game entirely.
 
 - Additional Levels
 
-Added a few more additional levels with different obstacle setting and levels of difficulty. There are currently 5 more additional Level types added and can be increased accordingly.
+Added additional levels with different levels of difficulty.
 The levels are repeated in an infinite loop and the game only ends once the player loses.
 
 - Lives
 
-Lives are added and the player only loses once the game ends and all lives are lost.
-The lives are displayed at the bottom of the window and players will know how many lives they have left.
+Lives are added and the player only loses once all lives are lost. Lives will be visibly removed each time the frog dies.
+The lives are displayed at the bottom of the window for the players.
 
 - Sound effects
 
@@ -105,7 +102,7 @@ Added a few more additional sound effect to indicate the change in levels, wins 
 
 - Junit Testings
 
-Added additional Junit tests for a few classes.
+Added additional Junit tests for a few classes
 
 - Build Files
 

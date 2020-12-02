@@ -200,18 +200,18 @@ public class Main extends Application {
 	}
 
 	/**
-	 * PauseMenu class defines a Pause Menu with items to let players restart the game,
+	 * Pause class defines a Pause Menu with items to let players restart the game,
 	 * resume the game, exit the game and return to Main Menu upon a click.
 	 */
-	private class Menu extends Pane{
+	private class Pause extends Pane{
 
 		/**
-		 * Class constructor for Menu.
-		 * Creates and instance of Menu to list the menu items that can be accessed by the player
+		 * Class constructor for Pause.
+		 * Creates and instance of Pause to list the menu items that can be accessed by the player
 		 * which includes the Resume, Restart, Exit and Exit to Main Menu buttons.
 		 * @param pauseStage The separate window (Stage) that displays the pause menu
 		 */
-		public Menu(Stage pauseStage){
+		public Pause(Stage pauseStage){
 
 			ImageView image = new ImageView("file:src/main/resources/images/bg.jpg");
 
@@ -313,14 +313,14 @@ public class Main extends Application {
 
 		level = myLevel;
 		MenuBox menu = new MenuBox(
-				new MenuItem("Menu", new ButtonAction() {
+				new MenuItem("Pause", new ButtonAction() {
 					@Override
 					public void act() throws IOException {
 						mediaPlayer.stopMusic();
 						level.stop();
 						frog.blockInputControls = true;
 						Stage pauseStage = new Stage();
-						pauseStage.setScene(new Scene(new Menu(pauseStage)));
+						pauseStage.setScene(new Scene(new Pause(pauseStage)));
 						pauseStage.setHeight(350);
 						pauseStage.setWidth(350);
 						pauseStage.show();
