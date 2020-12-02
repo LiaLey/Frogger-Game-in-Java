@@ -6,15 +6,18 @@ import javafx.scene.image.Image;
 
 /**
  * This class defines the Car obstacle in the game.
- * Extended from from Actor class.
+ * Extended from Actor class.
  */
 public class Car extends Actor {
 
+    /**
+     * Speed of the car
+     */
     private int speed;
 
     /**
      * This method moves the car when it is called.
-     * This method is overridden from its parent class and define how the car moves.
+     * This method is overridden from its parent class and define how the car moves in each frame.
      * @param now The timestamp of each frame of the game in nanoseconds
      */
     @Override

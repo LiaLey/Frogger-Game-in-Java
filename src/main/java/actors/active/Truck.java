@@ -4,16 +4,18 @@ import actors.Actor;
 import javafx.scene.image.Image;
 
 /**
- * This class defines the Truck obstacle in the game.
- * Extended from Actor class.
+ * This class defines the display and movements for the Truck obstacle in the game.
  */
 public class Truck extends Actor {
 
-	private int speed;
+	/**
+	 * speed of the truck
+	 */
+	protected int speed;
 
 	/**
 	 * This method moves the truck when it is called.
-	 * This method is overridden from its parent class and defines how the truck moves.
+	 * This method is overridden from its parent class and defines how the truck moves in terms of speed.
 	 * @param now The timestamp of each frame of the game in nanoseconds
 	 */
 	@Override

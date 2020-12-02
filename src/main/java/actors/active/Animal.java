@@ -17,9 +17,9 @@ import sound.MediaPlay;
 import java.io.File;
 
 /**
- * This class defines the player which is the Frog.
- * Displays the movement and the animation of the Frog.
- * Displays and controls interaction of the frog with the obstacles in the game.
+ * This class defines the player which is the Frog in the game.
+ * Animal defines and displays the movement and the animation of the Frog.
+ * It also defines and controls interaction of the frog with the obstacles in the game.
  */
 public class Animal extends Actor {
 
@@ -36,18 +36,43 @@ public class Animal extends Actor {
 	 * fixed horizontal movement distance for the animal
 	 */
 	protected final double MOVEMENT_X = 10.666666 * 2;
+
+	/**
+	 * Animations for upwards movement of the frog
+	 */
 	private final AnimationIterator upAnimation = new AnimationIterator(AnimationType.UP);
+	/**
+	 * Animations for downwards movement of the frog
+	 */
 	private final AnimationIterator downAnimation = new AnimationIterator(AnimationType.DOWN);
+	/**
+	 * Animations for left movement of the frog
+	 */
 	private final AnimationIterator leftAnimation = new AnimationIterator(AnimationType.LEFT);
+	/**
+	 * Animations for right movement of the frog
+	 */
 	private final AnimationIterator rightAnimation = new AnimationIterator(AnimationType.RIGHT);
+	/**
+	 * Animations for death in water of the frog
+	 */
 	private final AnimationIterator waterDeathAnimation = new AnimationIterator(AnimationType.WATER_DEATH);
+	/**
+	 * Animations for death by vehicle of the frog
+	 */
 	private final AnimationIterator carDeathAnimation = new AnimationIterator(AnimationType.CAR_DEATH);
 
 	/**
 	 * To stop or start frog movement.
 	 */
 	public boolean blockInputControls = false;
+	/**
+	 * Frog death by vehicle
+	 */
 	private boolean carDeath = false;
+	/**
+	 * Frog death by water
+	 */
 	private boolean waterDeath = false;
 
 	/**
@@ -62,7 +87,13 @@ public class Animal extends Actor {
 	 * starting height range of the animal
 	 */
 	protected int heightPoints = -93;
+	/**
+	 * Number of frog holes activated
+	 */
 	int numberOfEndsActivated = 0;
+	/**
+	 * Height achieved by the frog
+	 */
 	int maxRangeAchieved = 800;
 
 	/**
@@ -116,7 +147,7 @@ public class Animal extends Actor {
 	}
 
 	/**
-	 * This method tells the frog how to act every frame.
+	 * This method is inherited from class Actor and defines how th frog acts every frame.
 	 * This method keeps track of the position of the frog in each frame.
 	 * By keeping track of the position of the frog, this method checks for intersections with other objects and adds points or calls for death accordingly.
 	 * If it intersects with obstacles or sinking turtles, the frog will die and respawn.
@@ -200,7 +231,7 @@ public class Animal extends Actor {
 	 * The death animation of the frog will start to display once the method is called.
 	 * The method will show the death images in sequence and forms an animation loop.
 	 * After the death, the method will respawn the frog and deduct the life of the frog
-	 * @param animation The arrayList of images
+	 * @param animation The ArrayList of images
 	 * @param now The timestamp of each frame in the game in nanoseconds
 	 */
 	public void initiateDeathAnimation(AnimationIterator animation, long now){
@@ -224,8 +255,8 @@ public class Animal extends Actor {
 
 	/**
 	 * This method returns a true/false value each time it is called.
-	 * The value will be true if the frog has managed to enter all 5 frog holes in the level.
-	 * @return (boolean) true/ false depending on whether the frog has filled up all 5 frog holes
+	 * The value will be true if the frog has managed to enter all 5 frog holes in the level and false if not.
+	 * @return (boolean) true/ false depending on whether the frog has filled up all 5 frog holes or not
 	 */
 	public boolean hasWon() {
 		return numberOfEndsActivated == 2;
@@ -256,7 +287,7 @@ public class Animal extends Actor {
 	}
 
 	/**
-	 * This method will reset the number of frog holes filled to 0
+	 * This method will reset the number of frog holes filled to zero.
 	 */
 	public void resetEnds() {
 		numberOfEndsActivated = 0;
@@ -264,7 +295,7 @@ public class Animal extends Actor {
 
 	/**
 	 * This method will reset the health and points of the game.
-	 * It will also reset of the number of frog holes entered to 0.
+	 * It will also reset of the number of frog holes entered to zero.
 	 */
 	public void reset(){
 		resetEnds();
@@ -275,7 +306,7 @@ public class Animal extends Actor {
 	}
 
 	/**
-	 * This method will add height points and the aux points scored by the player.
+	 * This method will add height points and the winning points scored by the player.
 	 * @param heightScore The vertical distance travelled by the frog
 	 * @param auxScore The scores earned when winning the level or entering a frog hole
 	 */

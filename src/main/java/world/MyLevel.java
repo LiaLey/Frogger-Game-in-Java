@@ -16,7 +16,13 @@ import javafx.scene.media.MediaPlayer;
 
 public class MyLevel extends World{
 
+	/**
+	 * Class of the next level to be displayed.
+	 */
 	Class<MyLevel> nextLevel;
+	/**
+	 * ArrayList of Lives images to be displayed
+	 */
 	ArrayList<Lives> lives = new ArrayList<>();
 
 	/**
@@ -33,7 +39,7 @@ public class MyLevel extends World{
 	/**
 	 * Class constructor.
 	 * Creates an instance of MyLevel.
-	 * @param nextLevel The class that the game change to in the next round
+	 * @param nextLevel The class that the game change will change to in the next round
 	 */
 	public MyLevel(Class<MyLevel> nextLevel) {
 		

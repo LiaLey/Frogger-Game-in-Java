@@ -3,13 +3,22 @@ import actors.Actor;
 
 import javafx.scene.image.Image;
 
+import java.util.ArrayList;
+
 /**
- * This class defines the Turtle in the game. The frog will use the turtle as transport to cross the river.
+ * This class defines the display and movements of the Turtle in the game. The frog will use the turtle as transport to cross the river.
  */
-public class Turtle extends Actor {
-	Image turtle1;
-	Image turtle2;
-	Image turtle3;
+public class  Turtle extends Actor {
+//	Image turtle1;
+//	Image turtle2;
+//	Image turtle3;
+	/**
+	 * ArrayList of Turtle images
+	 */
+	ArrayList<Image> turtles = new ArrayList<>();
+	/**
+	 * Speed of the Turtle
+	 */
 	private int speed;
 
 	/**
@@ -21,15 +30,15 @@ public class Turtle extends Actor {
 	public void act(long now) {
 
 				if (now/900000000  % 3 ==0) {
-					setImage(turtle2);
+					setImage(turtles.get(1));
 					
 				}
 				else if (now/900000000 % 3 == 1) {
-					setImage(turtle1);
+					setImage(turtles.get(0));
 					
 				}
 				else if (now/900000000 %3 == 2) {
-					setImage(turtle3);
+					setImage(turtles.get(2));
 					
 				}
 			
@@ -51,13 +60,13 @@ public class Turtle extends Actor {
 	 */
 	public Turtle(int xpos, int ypos, int speed, int w, int h) {
 
-		turtle1 = new Image("file:src/main/resources/images/TurtleAnimation1.png", w, h, true, true);
-		turtle2 = new Image("file:src/main/resources/images/TurtleAnimation2.png", w, h, true, true);
-		turtle3 = new Image("file:src/main/resources/images/TurtleAnimation3.png", w, h, true, true);
+		turtles.add(new Image("file:src/main/resources/images/TurtleAnimation1.png", w, h, true, true));
+		turtles.add(new Image("file:src/main/resources/images/TurtleAnimation2.png", w, h, true, true));
+		turtles.add(new Image("file:src/main/resources/images/TurtleAnimation3.png", w, h, true, true));
 		setX(xpos);
 		setY(ypos);
 		this.speed = speed;
-		setImage(turtle2);
+		setImage(turtles.get(1));
 
 	}
 

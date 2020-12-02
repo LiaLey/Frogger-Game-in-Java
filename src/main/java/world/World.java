@@ -21,6 +21,9 @@ import javafx.scene.layout.Pane;
  */
 public abstract class World extends Pane {
 
+    /**
+     * Timer of the game
+     */
     private AnimationTimer timer;
 
     /**
@@ -73,7 +76,7 @@ public abstract class World extends Pane {
 
     /**
      * This method creates a AnimationTimer for the game.
-     * Once the timer is created and started the method act() for the actors in the scene will be called in each frame of the game
+     * Once the timer is created and started the method act() for the actors in the scene will be called in each frame of the game.
      * @see Actor
      */
     public void createTimer() {
@@ -160,7 +163,7 @@ public abstract class World extends Pane {
     }
 
     /**
-     * Abstract method of World class that should be overridden by inheriting classes that should show how inheriting classes will act.
+     * Abstract method of World class that should be overridden by inheriting classes and define how inheriting classes will act.
      * @param now The timestamp of current frame in nanoseconds
      */
     public abstract void act(long now);

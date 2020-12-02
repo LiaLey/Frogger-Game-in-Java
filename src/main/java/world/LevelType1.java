@@ -9,7 +9,7 @@ import actors.passive.End;
 
 /**
  * This Class defines the settings and obstacles for the first level type in the game.
- * The class will also pass the next level type class to its parent class to be called during the change of levels.
+ * The class will also pass the next level type class to its parent class MyLevel to be called during the change of levels.
  */
 public class LevelType1 extends MyLevel {
 

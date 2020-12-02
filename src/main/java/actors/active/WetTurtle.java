@@ -3,16 +3,28 @@ import actors.Actor;
 
 import javafx.scene.image.Image;
 
+import java.util.ArrayList;
+
 /**
  * This class defines the WetTurtle in the game. The frog will use the WetTurtle as transport to cross the river.
  */
 public class WetTurtle extends Actor {
 
-	Image turtle1;
-	Image turtle2;
-	Image turtle3;
-	Image turtle4;
+//	Image turtle1;
+//	Image turtle2;
+//	Image turtle3;
+//	Image turtle4;
+	/**
+	 * ArrayList of WetTurtle images
+	 */
+	ArrayList<Image> wetTurtle = new ArrayList<>();
+	/**
+	 * Movement speed of the WetTurtle
+	 */
 	int speed;
+	/**
+	 * Whether the WetTurtle has sunk or not
+	 */
 	boolean sunk = false;
 
 	/**
@@ -25,19 +37,19 @@ public class WetTurtle extends Actor {
 	public void act(long now) {
 
 				if (now/900000000  % 4 ==0) {
-					setImage(turtle2);
+					setImage(wetTurtle.get(1));
 					sunk = false;
 					
 				}
 				else if (now/900000000 % 4 == 1) {
-					setImage(turtle1);
+					setImage(wetTurtle.get(0));
 					sunk = false;
 				}
 				else if (now/900000000 %4 == 2) {
-					setImage(turtle3);
+					setImage(wetTurtle.get(2));
 					sunk = false;
 				} else if (now/900000000 %4 == 3) {
-					setImage(turtle4);
+					setImage(wetTurtle.get(3));
 					sunk = true;
 				}
 			
@@ -59,14 +71,14 @@ public class WetTurtle extends Actor {
 	 */
 	public WetTurtle(int xpos, int ypos, int speed, int w, int h) {
 
-		turtle1 = new Image("file:src/main/resources/images/TurtleAnimation1.png", w, h, true, true);
-		turtle2 = new Image("file:src/main/resources/images/TurtleAnimation2Wet.png", w, h, true, true);
-		turtle3 = new Image("file:src/main/resources/images/TurtleAnimation3Wet.png", w, h, true, true);
-		turtle4 = new Image("file:src/main/resources/images/TurtleAnimation4Wet.png", w, h, true, true);
+		wetTurtle.add(new Image("file:src/main/resources/images/TurtleAnimation1.png", w, h, true, true));
+		wetTurtle.add(new Image("file:src/main/resources/images/TurtleAnimation2Wet.png", w, h, true, true));
+		wetTurtle.add(new Image("file:src/main/resources/images/TurtleAnimation3Wet.png", w, h, true, true));
+		wetTurtle.add(new Image("file:src/main/resources/images/TurtleAnimation4Wet.png", w, h, true, true));
 		setX(xpos);
 		setY(ypos);
 		this.speed = speed;
-		setImage(turtle2);
+		setImage(wetTurtle.get(1));
 
 	}
 

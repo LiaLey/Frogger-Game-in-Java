@@ -7,10 +7,17 @@ import world.World;
 import java.util.ArrayList;
 
 /**
- * The Actor class defines the movements of each instance Actor in the scene.
- * The Actor class also checks for interaction of each of its instance by keeping track of their intersections.
+ * The Actor class defines the movements of each instance of the Actor class or its child class in the scene.
+ * Checks for interaction of each of its instance by keeping track of their intersections.
  */
 public abstract class Actor extends ImageView{
+
+    /**
+     * Constructor for Actor class.
+     */
+    public Actor(){
+
+    }
 
     /**
      * Moves the actors to their given coordinates on the pane.
@@ -23,7 +30,7 @@ public abstract class Actor extends ImageView{
     }
 
     /**
-     * This method returns the parent of scene when called.
+     * This method returns the parent of the scene when called.
      * @return World
      */
     public World getWorld() {
@@ -39,7 +46,7 @@ public abstract class Actor extends ImageView{
 //    }
 
     /**
-     * This method will return an arraylist of actors that are intersecting when called.
+     * This method will return an Arraylist of actors that are intersecting when called.
      * @param cls The class of objects that is being checked for intersections
      * @param <A>  Any class that extends from actors
      * @return An arrayList of objects intersecting with the object that calls the method

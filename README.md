@@ -17,7 +17,7 @@ Related classes were packaged together.
    - **actors.active** - Contains classes of actors that shows movement. Eg. Animal, Car
    - **actors.passive** - Contains classes of actors that are static. Eg. Background Image, Lives
 
-2. **world** - Contains classes that defines the stage setting. Eg. LevelType1, World
+2. **world** - Contains classes that defines the stage settings and display. Eg. LevelType1, World
 
 3. **menu** - Contains classes used to define construction of Menus
 

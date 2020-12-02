@@ -66,16 +66,38 @@ class ScorePair<String,Integer> extends Pair<String, Integer> implements Compara
 /**
  * Main Class of the Frogger Application
  */
-
 public class Main extends Application {
 
+	/**
+	 * Timer for the game
+	 */
 	AnimationTimer timer;
+	/**
+	 * The frog in the game
+	 */
 	Animal frog = new Animal();
+	/**
+	 * The level to display
+	 */
 	MyLevel level; //test
+	/** The stage (window) that will be displayed
+	 */
 	Stage currentStage;
+	/**
+	 * The name of the player (device)
+	 */
 	String currentUser;
+	/**
+	 * The media to play music
+	 */
 	MediaPlay mediaPlayer = new MediaPlay();
+	/**
+	 * The list to store the Lives images
+	 */
 	ArrayList<Lives> lives = new ArrayList<>(); //test
+	/**
+	 * List of scores
+	 */
 	ArrayList<ScorePair> scoreBoard = new ArrayList<>();
 
 	/**
@@ -338,8 +360,8 @@ public class Main extends Application {
 	}
 
 	/**
-	 * This method saves the score of the player in a ScorePair.
-	 * The score will be stored in a ScorePair array list.
+	 * This method saves the score of the player in a ScorePair into a file.
+	 * The score will be stored in a ScorePair ArrayList.
 	 * The array of scores will be written into the 'LeaderBoard' file each time.
 	 * @throws IOException upon error in reading/loading files
 	 */
@@ -379,7 +401,7 @@ public class Main extends Application {
 			System.out.println("LeaderBoard Loaded From Save");
 		}
 		catch (Exception e){
-			System.out.println("Error in Loading LeaderBoard");
+			System.out.println("Error in Loading LeaderBoard. LeaderBoard may be empty.");
 			//e.printStackTrace();
 		}
 
@@ -387,10 +409,11 @@ public class Main extends Application {
 
 
 	/**
-	 * This method creates the timer for the game and the timer will be called in each frame while active
+	 * This method creates the timer for the game and the timer will be called in each frame while active.
 	 * The handle method inherited from AnimationTimer is overridden to check the points of the player and health of the frog in each frame
 	 * It also checks if the player has won or lost the round so the game can proceed to the next level or end.
 	 * This is called in each timestamp of the frame (in nanoseconds)
+	 * @see AnimationTimer
 	 */
 	public void createTimer() {
 		timer = new AnimationTimer() {
@@ -486,7 +509,7 @@ public class Main extends Application {
 	/**
 	 * This method gets the name of the device the player is currently using.
 	 * The method gets the name of the device from its specific environment variable.
-	 * @return Name of the device
+	 * @return (String) Name of the device
 	 */
 	public String getComputerName(){
 		Map<String, String> env = System.getenv();

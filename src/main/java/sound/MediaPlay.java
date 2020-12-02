@@ -7,13 +7,13 @@ import javafx.scene.media.MediaPlayer;
 import java.io.File;
 
 /**
- * This class defines the background music that will be played throughout the game as well as some sound effects.
+ * This class defines the background music that will be played throughout the game as well as the sound effects.
  */
 public class MediaPlay {
     MediaPlayer mediaPlayer;
 
     /**
-     * Constructor class of MediaPlay that creates and instance of MediaPlay
+     * Class constructor of MediaPlay that creates and instance of MediaPlay.
      */
     public MediaPlay(){
 
@@ -32,7 +32,7 @@ public class MediaPlay {
 
     /**
      * This method plays the change level sound effect once it is called.
-     * This method is called on the level changes.
+     * This method is called when the level type changes.
      */
     public void playChangeLevelMusic() {
         String musicFile = "src/main/resources/sound/change.mp3";

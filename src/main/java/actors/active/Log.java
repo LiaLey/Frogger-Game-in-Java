@@ -4,19 +4,18 @@ import actors.Actor;
 import javafx.scene.image.Image;
 
 /**
- * This class defines the Log obstacle in the game
- * extended from Actor
+ * This class defines the display and movements of the Log obstacle in the game.
  */
 public class Log extends Actor {
 
 	/**
-	 * speed of the moving log
+	 * Speed of the moving log
 	 */
 	protected double speed;
 
 	/**
 	 * This method moves the log when it is called.
-	 * This method is overridden from its parent class and define how the log moves.
+	 * This method is overridden from its parent class and define how the log moves in each frame.
 	 * @param now The timestamp of each frame of the game in nanoseconds
 	 */
 	@Override

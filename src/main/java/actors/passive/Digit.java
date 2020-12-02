@@ -11,7 +11,7 @@ public class Digit extends Actor {
 	/**
 	 * Inherited abstract method that must be overridden.
 	 * This method defines how the Digit Images should act in each frame.
-	 * In this game the Images will do nothing.
+	 * In this game the Digit images will do nothing.
 	 * @param now The timestamp of the frame in nanoseconds
 	 */
 	@Override

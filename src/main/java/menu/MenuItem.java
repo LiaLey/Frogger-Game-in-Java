@@ -22,7 +22,7 @@ public class MenuItem extends StackPane {
      * Class constructor.
      * Creates new instance of Menu item with given name and button action.
      * @param name Name of the menu item to be displayed
-     * @param myButtonAction Button action that will be called on the menu item is clicked
+     * @param myButtonAction Button action that will be called once the menu item is clicked
      */
     public MenuItem(String name, ButtonAction myButtonAction) {
 
@@ -73,9 +73,9 @@ public class MenuItem extends StackPane {
 
     /**
      * Class constructor.
-     * Creates new instance of Menu item with given name and button action.
+     * Creates new instance of Menu item with given name, button action, width and height.
      * @param name Name of the menu item to be displayed
-     * @param myButtonAction Button action that will be called on the menu item is clicked
+     * @param myButtonAction Button action that will be called once the menu item is clicked
      * @param v The width of the menu item
      * @param v1 The height of the menu item
      */

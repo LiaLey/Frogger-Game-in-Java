@@ -17,7 +17,7 @@ public class Title extends StackPane {
     /**
      * Class constuctor.
      * Creates an instance of Title with given string.
-     * @param name String of the title
+     * @param name Name of the title
      */
     public Title(String name){
         Rectangle bg = new Rectangle(375,60);

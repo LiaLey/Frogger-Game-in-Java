@@ -9,6 +9,13 @@ import java.io.IOException;
 public abstract class ButtonAction {
 
     /**
+     * Class constructor.
+     * Creates an instance of ButtonAction.
+     */
+    public ButtonAction(){
+
+    }
+    /**
      * This method is an abstract method that should be overridden by inheriting classes to specify actions that should happen when the button is clicked.
      * @throws IOException on error during execution of actions in act()
      */
