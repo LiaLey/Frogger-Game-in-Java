@@ -251,6 +251,7 @@ public class Main extends Application {
 						public void act() throws IOException {
 							pauseStage.close();
 							level.start();
+							timer.start();
 							frog.blockInputControls = false;
 							mediaPlayer.playMusic();
 
@@ -339,6 +340,7 @@ public class Main extends Application {
 					@Override
 					public void act() throws IOException {
 						mediaPlayer.stopMusic();
+						timer.stop();
 						level.stop();
 						frog.blockInputControls = true;
 						Stage pauseStage = new Stage();
@@ -462,17 +464,17 @@ public class Main extends Application {
 					mediaPlayer.stopMusic();
 					mediaPlayer.playChangeLevelMusic();
 					stopGame();
-					try {
-						System.out.println("This is : " + level.getNextLevel().getClass().getSimpleName());
-					} catch (NoSuchMethodException e) {
-						e.printStackTrace();
-					} catch (IllegalAccessException e) {
-						e.printStackTrace();
-					} catch (InvocationTargetException e) {
-						e.printStackTrace();
-					} catch (InstantiationException e) {
-						e.printStackTrace();
-					}
+//					try {
+//						System.out.println("This is : " + level.getNextLevel().getClass().getSimpleName());
+//					} catch (NoSuchMethodException e) {
+//						e.printStackTrace();
+//					} catch (IllegalAccessException e) {
+//						e.printStackTrace();
+//					} catch (InvocationTargetException e) {
+//						e.printStackTrace();
+//					} catch (InstantiationException e) {
+//						e.printStackTrace();
+//					}
 					try{
 						changeLevel(level.getNextLevel(), currentStage, frog);
 					}
