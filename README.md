@@ -37,8 +37,7 @@ Included an MVC pattern. A controller class controls and show the Info window th
 - Naming Convention Changes
 
 Some naming conventions were changed to avoid confusion and disorientation.
-Eg. MyStage was renamed MyLevel to avoid confusion with the JavaFX Stage class. Animal class was renamed Player to avoid being 
-confused with other animals' classes in the scene.
+Eg. MyStage was renamed MyLevel to avoid confusion with the JavaFX Stage class. Animal class was also renamed Player.
 
 - Scoring System
 
