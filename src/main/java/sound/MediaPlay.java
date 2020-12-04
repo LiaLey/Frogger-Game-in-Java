@@ -10,6 +10,10 @@ import java.io.File;
  * This class defines the background music that will be played throughout the game as well as the sound effects.
  */
 public class MediaPlay {
+
+    /**
+     * Creates an Instance of the JavaFX MediaPlayer
+     */
     MediaPlayer mediaPlayer;
 
     /**

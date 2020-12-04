@@ -69,26 +69,26 @@ public class AnimationIterator {
     public AnimationIterator(AnimationType animation) {
         type = animation;
         if (animation == AnimationType.UP) {
-            animations.add(new Image("file:src/main/resources/images/froggerUp.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
-            animations.add(new Image("file:src/main/resources/images/froggerUpJump.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/froggerUp.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/froggerUpJump.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
         } else if (animation == AnimationType.DOWN) {
-            animations.add(new Image("file:src/main/resources/images/froggerDown.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
-            animations.add(new Image("file:src/main/resources/images/froggerDownJump.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/froggerDown.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/froggerDownJump.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
         } else if (animation == AnimationType.LEFT) {
-            animations.add(new Image("file:src/main/resources/images/froggerLeft.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
-            animations.add(new Image("file:src/main/resources/images/froggerLeftJump.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/froggerLeft.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/froggerLeftJump.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
         } else if (animation == AnimationType.RIGHT) {
-            animations.add(new Image("file:src/main/resources/images/froggerRight.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
-            animations.add(new Image("file:src/main/resources/images/froggerRightJump.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/froggerRight.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/froggerRightJump.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
         } else if (animation == AnimationType.WATER_DEATH) {
-            animations.add(new Image("file:src/main/resources/images/waterdeath1.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
-            animations.add(new Image("file:src/main/resources/images/waterdeath2.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
-            animations.add(new Image("file:src/main/resources/images/waterdeath3.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
-            animations.add(new Image("file:src/main/resources/images/waterdeath4.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/waterdeath1.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/waterdeath2.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/waterdeath3.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/waterdeath4.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
         } else if (animation == AnimationType.CAR_DEATH) {
-            animations.add(new Image("file:src/main/resources/images/cardeath1.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
-            animations.add(new Image("file:src/main/resources/images/cardeath2.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
-            animations.add(new Image("file:src/main/resources/images/cardeath3.png", Animal.IMAGE_SIZE, Animal.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/cardeath1.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/cardeath2.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
+            animations.add(new Image("file:src/main/resources/images/cardeath3.png", Player.IMAGE_SIZE, Player.IMAGE_SIZE, true, true));
         }
     }
 

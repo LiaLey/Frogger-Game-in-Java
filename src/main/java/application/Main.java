@@ -1,6 +1,6 @@
 package application;
 
-import actors.active.Animal;
+import actors.active.Player;
 import actors.passive.BackgroundImage;
 import actors.passive.Lives;
 import javafx.animation.AnimationTimer;
@@ -27,7 +27,6 @@ import world.*;
 
 
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
@@ -75,7 +74,7 @@ public class Main extends Application {
 	/**
 	 * The frog in the game
 	 */
-	Animal frog = new Animal();
+	Player frog = new Player();
 	/**
 	 * The level to display
 	 */
@@ -326,13 +325,13 @@ public class Main extends Application {
 	/**
 	 * This method starts or changes and displays the levels of the game each time it is called.
 	 * The method adds the game menu into the scene so players will only have access to the mid game menu once the level starts.
-	 * This method also adds the animal into the scene at the start of each level.
+	 * This method also adds the player into the scene at the start of each level.
 	 * @param myLevel The level that the game is supposed to change to
 	 * @param currentStage The current window running the game
-	 * @param frog The animal in the game
+	 * @param frog The player in the game
 	 * @throws IOException upon input error
 	 */
-	public void changeLevel(MyLevel myLevel, Stage currentStage, Animal frog) throws IOException{
+	public void changeLevel(MyLevel myLevel, Stage currentStage, Player frog) throws IOException{
 
 		level = myLevel;
 		MenuBox menu = new MenuBox(
@@ -380,7 +379,7 @@ public class Main extends Application {
 	}
 
 	/**
-	 * Resets the animal to its original state, restores health and scores.
+	 * Resets the player to its original state, restores health and scores.
 	 * Returns the scene of the game back to the Main Menu.
 	 * @throws IOException upon error in resetting game
 	 */

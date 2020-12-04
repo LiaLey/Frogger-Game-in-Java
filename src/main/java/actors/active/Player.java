@@ -18,25 +18,25 @@ import java.io.File;
 
 /**
  * This class defines the player which is the Frog in the game.
- * Animal defines and displays the movement and the animation of the Frog.
+ * Player defines and displays the movement and the animation of the Frog.
  * It also defines and controls interaction of the frog with the obstacles in the game.
  */
-public class Animal extends Actor {
+public class Player extends Actor {
 
 	/**
 	 * MediaPlayer to play the music
 	 */
 	MediaPlayer mediaPlayer;
 	/**
-	 * Size of the animal(frog) image
+	 * Size of the player(frog) image
 	 */
 	protected static final int IMAGE_SIZE = 40;
 	/**
-	 * fixed vertical movement distance for the animal
+	 * fixed vertical movement distance for the player
 	 */
 	protected final double MOVEMENT = 13.3333333 * 2;
 	/**
-	 * fixed horizontal movement distance for the animal
+	 * fixed horizontal movement distance for the player
 	 */
 	protected final double MOVEMENT_X = 10.666666 * 2;
 
@@ -79,7 +79,7 @@ public class Animal extends Actor {
 	private boolean waterDeath = false;
 
 	/**
-	 * fixed lives of the animal (frog)
+	 * fixed lives of the player
 	 */
 	protected int lives = 8;
 	/**
@@ -87,7 +87,7 @@ public class Animal extends Actor {
 	 */
 	protected int auxPoints = 0;
 	/**
-	 * starting height range of the animal
+	 * starting height range of the player
 	 */
 	protected int heightPoints = -93;
 	/**
@@ -100,12 +100,12 @@ public class Animal extends Actor {
 	int maxRangeAchieved = 800;
 
 	/**
-	 * Class constructor for animal.
-	 * Creates an instance of the animal player (frog).
+	 * Class constructor for Player.
+	 * Creates an instance of the player (frog).
 	 * Sets the position of the frog and controls the movement and animation displays of the frog during each movement.
 	 * Controls of the frog are activated with the WASD keys.
 	 */
-	public Animal() {
+	public Player() {
 		setImage(new Image("file:src/main/resources/images/froggerUp.png", IMAGE_SIZE, IMAGE_SIZE, true, true));
 		setX(300);
 		setY(679.8+MOVEMENT);
@@ -170,7 +170,7 @@ public class Animal extends Actor {
 			respawn(false);
 		}
 
-		if (getX()<0) {    //push animal back if moved horizontally out of map
+		if (getX()<0) {    //push player back if moved horizontally out of map
 			move(MOVEMENT*2, 0);
 		}else if (getX()>600){
 			move(-MOVEMENT*2,0);
