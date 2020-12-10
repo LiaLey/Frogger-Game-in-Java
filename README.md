@@ -105,3 +105,6 @@ Added Gradle build files for the project
 
 ### GitHub/Version Control
 ---
+
+![Image test](src/main/resources/images/git.png)
+![Image test](src/main/resources/images/commit.png)
