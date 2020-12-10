@@ -108,4 +108,3 @@ Added Gradle build files for the project
 
 ![Image test](src/main/resources/images/git.png)
 ![Image test](src/main/resources/images/commit1.png)
-![Image test](src/main/resources/images/commit2.png)
