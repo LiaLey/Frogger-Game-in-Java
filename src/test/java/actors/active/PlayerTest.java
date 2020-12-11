@@ -62,7 +62,7 @@ public class PlayerTest {
 
         Assert.assertFalse(player.hasWon());
 
-        player.numberOfEndsActivated = 2;
+        player.numberOfEndsActivated = 5;
         Assert.assertTrue(player.hasWon());
 
     }
