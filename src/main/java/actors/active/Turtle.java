@@ -9,9 +9,7 @@ import java.util.ArrayList;
  * This class defines the display and movements of the Turtle in the game. The frog will use the turtle as transport to cross the river.
  */
 public class  Turtle extends Actor {
-//	Image turtle1;
-//	Image turtle2;
-//	Image turtle3;
+
 	/**
 	 * ArrayList of Turtle images
 	 */

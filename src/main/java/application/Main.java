@@ -78,7 +78,7 @@ public class Main extends Application {
 	/**
 	 * The level to display
 	 */
-	MyLevel level; //test
+	MyLevel level;
 	/** The stage (window) that will be displayed
 	 */
 	Stage currentStage;
@@ -463,17 +463,6 @@ public class Main extends Application {
 					mediaPlayer.stopMusic();
 					mediaPlayer.playChangeLevelMusic();
 					stopGame();
-//					try {
-//						System.out.println("This is : " + level.getNextLevel().getClass().getSimpleName());
-//					} catch (NoSuchMethodException e) {
-//						e.printStackTrace();
-//					} catch (IllegalAccessException e) {
-//						e.printStackTrace();
-//					} catch (InvocationTargetException e) {
-//						e.printStackTrace();
-//					} catch (InstantiationException e) {
-//						e.printStackTrace();
-//					}
 					try{
 						changeLevel(level.getNextLevel(), currentStage, frog);
 					}

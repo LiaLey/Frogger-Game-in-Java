@@ -10,10 +10,7 @@ import java.util.ArrayList;
  */
 public class WetTurtle extends Actor {
 
-//	Image turtle1;
-//	Image turtle2;
-//	Image turtle3;
-//	Image turtle4;
+
 	/**
 	 * ArrayList of WetTurtle images
 	 */
