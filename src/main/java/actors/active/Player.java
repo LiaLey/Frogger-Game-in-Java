@@ -262,7 +262,7 @@ public class Player extends Actor {
 	 * @return (boolean) true/ false depending on whether the frog has filled up all 5 frog holes or not
 	 */
 	public boolean hasWon() {
-		return numberOfEndsActivated == 2;
+		return numberOfEndsActivated == 5;
 	}
 
 	/**
